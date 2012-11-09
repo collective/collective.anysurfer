@@ -5,3 +5,5 @@ lib/
 parts/
 var/
 *.mo
+*.pyc
+*.egg-info/
