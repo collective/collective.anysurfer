@@ -7,3 +7,4 @@ var/
 *.mo
 *.pyc
 *.egg-info/
+.installed.cfg
