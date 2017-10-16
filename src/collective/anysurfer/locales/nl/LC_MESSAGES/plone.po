@@ -17,3 +17,6 @@ msgstr "Sitemap"
 
 msgid "Search Results"
 msgstr "Zoekresultaten"
+
+msgid "Contact information"
+msgstr "Contactformulier"

@@ -4,7 +4,8 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add missing translations for contact-info view title
+  [laulaz]
 
 
 1.1 (2012-11-12)

@@ -17,3 +17,6 @@ msgstr "Plan du site"
 
 msgid "Search Results"
 msgstr "Résultats de la recherche"
+
+msgid "Contact information"
+msgstr "Formulaire de contact"
