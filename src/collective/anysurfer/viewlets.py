@@ -37,8 +37,9 @@ class TitleViewletForSkinTemplateView(common.TitleViewlet):
                                         name=u'plone_portal_state')
         portal_title = escape(safe_unicode(portal_state.portal_title()))
         template = IAnnotations(self.view)[SKIN_TEMPLATE_KEY]
-        if template.title:
-            view_title = translate(template.title, 'plone',
+        title = template.title or template.id
+        if title:
+            view_title = translate(title, 'plone',
                     context=self.request)
             self.site_title = u"%s &mdash; %s" % (view_title, portal_title)
         else:

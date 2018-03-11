@@ -20,3 +20,6 @@ msgstr "Zoekresultaten"
 
 msgid "Contact information"
 msgstr "Contactformulier"
+
+msgid "accessibility-info"
+msgstr "Toegankelijkheid"

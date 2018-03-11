@@ -4,6 +4,9 @@ Changelog
 1.2 (unreleased)
 ----------------
 
+- Add missing translations for accessibility view title
+  [laulaz]
+
 - Add missing translations for contact-info view title
   [laulaz]
 
