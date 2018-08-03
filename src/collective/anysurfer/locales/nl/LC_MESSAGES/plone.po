@@ -23,3 +23,16 @@ msgstr "Contactformulier"
 
 msgid "accessibility-info"
 msgstr "Toegankelijkheid"
+
+
+msgid "sitemap"
+msgstr "Sitemap"
+
+msgid "search"
+msgstr "Zoekresultaten"
+
+msgid "contact-info"
+msgstr "Contactformulier"
+
+msgid "accessibility-info"
+msgstr "Toegankelijkheid"
