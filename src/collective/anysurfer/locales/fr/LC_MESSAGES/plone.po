@@ -32,7 +32,3 @@ msgstr "Résultats de la recherche"
 
 msgid "contact-info"
 msgstr "Formulaire de contact"
-
-msgid "accessibility-info"
-msgstr "Accessibilité"
-
