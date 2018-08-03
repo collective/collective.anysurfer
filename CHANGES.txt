@@ -4,6 +4,9 @@ Changelog
 1.2 (unreleased)
 ----------------
 
+- Migrate to plone 5
+  [oxydedefer]
+
 - Add missing translations for accessibility view title
   [laulaz]
 

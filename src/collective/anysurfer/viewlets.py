@@ -25,7 +25,12 @@ class TitleViewlet(common.TitleViewlet):
         portal_title = escape(safe_unicode(portal_state.portal_title()))
         if page_title == portal_title:
             logger.warn('View without explicit title: %s' % self.request.URL)
-            self.site_title = portal_title
+            view_name = self.view.__name__
+            view_title = translate(view_name, 'plone', context=self.request)
+            if view_name != view_title:
+                self.site_title = u"%s &mdash; %s" % (view_title, portal_title)
+            else:
+                self.site_title = portal_title
         else:
             self.site_title = u"%s &mdash; %s" % (page_title, portal_title)
 
