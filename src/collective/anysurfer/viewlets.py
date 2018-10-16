@@ -38,10 +38,10 @@ class TitleViewlet(common.TitleViewlet):
                             portal.absolute_url()
                         )
                     )
-                except:
+                except KeyError:
                     self.site_title = u"%s &mdash; %s" % (
+                        translate(u'404-error', 'plone', context=self.request),
                         portal_title,
-                        translate(u'404 error', 'plone', context=self.request)
                     )
                 else:
                     self.site_title = portal_title
