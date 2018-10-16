@@ -8,6 +8,7 @@ from zope.i18n import translate
 from Products.CMFPlone.utils import safe_unicode
 
 from plone.app.layout.viewlets import common
+from plone import api
 
 from collective.anysurfer.layout import SKIN_TEMPLATE_KEY
 
@@ -30,7 +31,21 @@ class TitleViewlet(common.TitleViewlet):
             if view_name != view_title:
                 self.site_title = u"%s &mdash; %s" % (view_title, portal_title)
             else:
-                self.site_title = portal_title
+                try:
+                    portal = api.portal.get()
+                    portal.unrestrictedTraverse(
+                        self.request.getURL().lstrip(
+                            portal.absolute_url()
+                        )
+                    )
+                except:
+                    self.site_title = u"%s &mdash; %s" % (
+                        portal_title,
+                        translate(u'404 error', 'plone', context=self.request)
+                    )
+                else:
+                    self.site_title = portal_title
+
         else:
             self.site_title = u"%s &mdash; %s" % (page_title, portal_title)
 

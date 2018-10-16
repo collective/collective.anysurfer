@@ -32,3 +32,6 @@ msgstr "Résultats de la recherche"
 
 msgid "contact-info"
 msgstr "Formulaire de contact"
+
+msgid "404 error"
+msgstr "Page non trouvée"

@@ -4,6 +4,9 @@ Changelog
 1.2 (unreleased)
 ----------------
 
+- Handle 404 page
+  [vpiret]
+
 - Migrate to plone 5
   [oxydedefer]
 
