@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="plonetheme.intranetbric">
+
+    <browser:jbot directory="overrides" />
+
+    <browser:resource
+        name="search.js"
+        file="search.js"
+        layer="..interfaces.ILayerSpecific"
+        />
+
+</configure>

@@ -35,6 +35,7 @@ setup(name='collective.anysurfer',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'z3c.jbot',
           # -*- Extra requirements: -*-
       ],
       extras_require={'test': ['plone.app.testing']},

@@ -4,7 +4,7 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-- Add search results count in search page title
+- Move h1, add search results count in search page title & handle JS refresh
   [laulaz]
 
 - Handle 404 page
