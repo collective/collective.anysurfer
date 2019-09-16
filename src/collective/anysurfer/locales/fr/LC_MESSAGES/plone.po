@@ -16,7 +16,7 @@ msgid "Sitemap"
 msgstr "Plan du site"
 
 msgid "Search Results"
-msgstr "Résultats de la recherche"
+msgstr "résultats de recherche"
 
 msgid "Contact information"
 msgstr "Formulaire de contact"
@@ -28,7 +28,7 @@ msgid "sitemap"
 msgstr "Plan du site"
 
 msgid "search"
-msgstr "Résultats de la recherche"
+msgstr "résultats de recherche"
 
 msgid "contact-info"
 msgstr "Formulaire de contact"

@@ -4,6 +4,9 @@ Changelog
 1.2 (unreleased)
 ----------------
 
+- Add search results count in search page title
+  [laulaz]
+
 - Handle 404 page
   [vpiret]
 

@@ -28,7 +28,14 @@ class TitleViewlet(common.TitleViewlet):
             logger.warn('View without explicit title: %s' % self.request.URL)
             view_name = self.view.__name__
             view_title = translate(view_name, 'plone', context=self.request)
-            if view_name != view_title:
+            if view_name == "search":
+                results_nb = self.view.results().sequence_length
+                self.site_title = u"%s %s &mdash; %s" % (
+                    results_nb,
+                    view_title,
+                    portal_title,
+                )
+            elif view_name != view_title:
                 self.site_title = u"%s &mdash; %s" % (view_title, portal_title)
             else:
                 try:
