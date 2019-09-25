@@ -7,10 +7,13 @@
     i18n_domain="collective.anysurfer">
 
     <five:registerPackage package="." initialize=".initialize" />
+    <include package="plone.transformchain" />
     <include package="z3c.jbot" file="meta.zcml" />
     <include package=".browser" />
 
     <i18n:registerTranslations directory="locales"/>
+
+    <adapter factory=".transform.AnySurfer" name="collective.anysurfer" />
 
     <genericsetup:registerProfile
         name="default"

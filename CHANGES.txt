@@ -4,6 +4,9 @@ Changelog
 1.2 (unreleased)
 ----------------
 
+- Handle more Anysurfer usecases : empty lists, bad alts, required labels, ...
+  [laulaz]
+
 - Move h1, add search results count in search page title & handle JS refresh
   [laulaz]
 

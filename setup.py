@@ -36,6 +36,7 @@ setup(name='collective.anysurfer',
       install_requires=[
           'setuptools',
           'z3c.jbot',
+          'beautifulsoup4',
           # -*- Extra requirements: -*-
       ],
       extras_require={'test': ['plone.app.testing']},
