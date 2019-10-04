@@ -1,0 +1,4 @@
+- Godefroid Chapelle, Original Author [BubbleNet]
+- Laurent Lasudry [Affinitic]
+- Valentin Piret [Affinitic]
+- Sébastien Sirtoli [Affinitic]
