@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2 (unreleased)
+1.2 (2019-10-04)
 ----------------
 
 - Add documentation, contributors, fix setup.py & use RST
