@@ -4,6 +4,9 @@ Changelog
 1.2 (unreleased)
 ----------------
 
+- Add documentation, contributors, fix setup.py & use RST
+  [laulaz]
+
 - Handle more Anysurfer usecases : empty lists, bad alts, required labels, ...
   [laulaz]
 
