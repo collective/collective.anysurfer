@@ -38,7 +38,7 @@ def fill_required_titles(soup):
                     tag.has_attr("class") and "required" in tag["class"]
     )
     for tag in required_tags:
-        tag.string = " {0}".format(translated_required)
+        tag.string = " ({0})".format(translated_required)
 
 
 def assemble_required_labels(soup):
