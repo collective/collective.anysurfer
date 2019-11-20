@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.3 (unreleased)
-----------------
+1.2.1 (2019-11-20)
+------------------
 
 - Harmonization of '(Required)' syntax for fields
   [laulaz]
