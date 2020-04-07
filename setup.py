@@ -42,6 +42,7 @@ setup(name='collective.anysurfer',
       install_requires=[
           'setuptools',
           'z3c.jbot',
+          'plone.api',
           'beautifulsoup4',
           # -*- Extra requirements: -*-
       ],
