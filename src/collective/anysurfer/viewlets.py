@@ -14,6 +14,15 @@ from collective.anysurfer.layout import SKIN_TEMPLATE_KEY
 
 logger = logging.getLogger('collective.anysurfer')
 
+# In some cases (ex: multilingual websites) we cannot check correctly that
+# page_title == portal_title to translate view names
+VIEWS_TO_HANDLE = [
+    "accessibility-info",
+    "sitemap",
+    "search",
+    "contact-info",
+]
+
 
 class TitleViewlet(common.TitleViewlet):
 
@@ -24,9 +33,9 @@ class TitleViewlet(common.TitleViewlet):
                                          name=u'plone_context_state')
         page_title = escape(safe_unicode(context_state.object_title()))
         portal_title = escape(safe_unicode(portal_state.portal_title()))
-        if page_title == portal_title:
+        view_name = self.view.__name__
+        if page_title == portal_title or view_name in VIEWS_TO_HANDLE:
             logger.warn('View without explicit title: %s' % self.request.URL)
-            view_name = self.view.__name__
             view_title = translate(view_name, 'plone', context=self.request)
             if view_name == "search":
                 results_nb = self.view.results().sequence_length

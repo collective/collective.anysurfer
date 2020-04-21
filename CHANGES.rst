@@ -4,6 +4,9 @@ Changelog
 1.2.2 (unreleased)
 ------------------
 
+- Fix view titles calculation in multilingual websites : #1
+  [laulaz]
+
 - Add missing plone.api dependency
   [laulaz]
 
