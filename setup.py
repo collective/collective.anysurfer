@@ -47,7 +47,12 @@ setup(name='collective.anysurfer',
           'soupsieve<=1.9.6',
           # -*- Extra requirements: -*-
       ],
-      extras_require={'test': ['plone.app.testing']},
+      extras_require={
+          'test': [
+              'plone.app.testing',
+              'unittest2',
+         ]
+      },
       entry_points="""
       # -*- Entry points: -*-
   	  [z3c.autoinclude.plugin]
