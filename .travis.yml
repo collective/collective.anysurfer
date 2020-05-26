@@ -14,4 +14,8 @@ script:
 
 notifications:
   email:
-    - laurent.lasudry@affinitic.be
+    recipients:
+      - devel@lists.affinitic.be
+      - devs@imio.be
+    on_success: change
+    on_failure: change
