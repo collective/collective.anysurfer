@@ -2,7 +2,6 @@
 from collective.anysurfer import get_default_text
 from collective.anysurfer.interfaces import IAnysurferSettings
 from plone import api
-from plone.app.upgrade.utils import loadMigrationProfile
 
 
 def udpate_default_template(context):
@@ -10,8 +9,5 @@ def udpate_default_template(context):
     api.portal.set_registry_record('text', text, interface=IAnysurferSettings)
 
 
-def reload_gs_profile(context):
-    loadMigrationProfile(
-        context,
-        'profile-collective.anysurfer:default',
-    )
+def add_control_panel(context):
+    context.runImportStepFromProfile("profile-collective.anysurfer:default", "controlpanel")
