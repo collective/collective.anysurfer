@@ -58,4 +58,9 @@
         layer=".interfaces.ILayerSpecific"
         />
 
+    <utility
+        factory=".setuphandlers.HiddenProfiles"
+        name="collective.anysurfer-hiddenprofiles"
+        />
+
 </configure>
