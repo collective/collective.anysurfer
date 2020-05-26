@@ -2,6 +2,9 @@
 collective.anysurfer
 ====================
 
+.. image:: https://api.travis-ci.com/collective/collective.anysurfer.svg?branch=master
+    :target: https://travis-ci.com/github/collective/collective.anysurfer
+
 This package adds Anysurfer (https://anysurfer.be/fr) support to Plone.
 Anysurfer is a Belgian accessibility standard equivalent to WCAG 2.0 A.
 
