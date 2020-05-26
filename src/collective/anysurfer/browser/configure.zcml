@@ -5,6 +5,11 @@
 
     <browser:jbot directory="overrides" />
 
+    <browser:resourceDirectory
+        name="collective.anysurfer"
+        directory="static"
+        layer="..interfaces.ILayerSpecific" />
+
     <browser:resource
         name="search.js"
         file="search.js"
