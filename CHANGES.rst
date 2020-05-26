@@ -4,8 +4,8 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
-- Update buildout
-  [boulch]
+- Update/fix buildout
+  [boulch, laulaz]
 
 - Make titles calculation more robust in [uni/multi]lingual websites : #1
   [laulaz]

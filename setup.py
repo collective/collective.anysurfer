@@ -44,6 +44,7 @@ setup(name='collective.anysurfer',
           'z3c.jbot',
           'plone.api',
           'beautifulsoup4',
+          'soupsieve<=1.9.6',
           # -*- Extra requirements: -*-
       ],
       extras_require={'test': ['plone.app.testing']},
