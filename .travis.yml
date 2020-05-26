@@ -1,0 +1,17 @@
+language: python
+sudo: true
+cache:
+  directories:
+    - eggs
+    - downloads
+python: 2.7
+install:
+  - pip install -r requirements.txt
+  - buildout -N buildout:download-cache=downloads annotate
+  - buildout -c travis.cfg -t 30 buildout:download-cache=downloads
+script:
+  - bin/test
+
+notifications:
+  email:
+    - laurent.lasudry@affinitic.be
