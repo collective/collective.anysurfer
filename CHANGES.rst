@@ -7,6 +7,9 @@ Changelog
 - Fix 404 / EN pages title handling
   [laulaz]
 
+- New upgrade step : Add control panel.
+  [boulch]
+
 - Add setuphandler and upgradestep to set default accessibility text in registry.
   [boulch]
 
