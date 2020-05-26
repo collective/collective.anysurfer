@@ -4,7 +4,8 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Make titles calculation more robust in [uni/multi]lingual websites : #1
+  [laulaz]
 
 
 1.2.2 (2020-04-29)
