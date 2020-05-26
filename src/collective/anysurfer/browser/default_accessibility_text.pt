@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="collective.anysurfer">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  </head>
+
+  <body i18n:translate="default-accessibility-text">
+      <h1 class="documentFirstHeading"
+          i18n:translate="heading_accessibility_info">Accessibility</h1>
+
+      <div id="content-core">
+          <h2>Web accessibility policy</h2>
+          <p>All the official websites of the EU institutions should follow international guidelines for accessible web content. This means that texts, images, forms, sounds, etc. should be accessible and understandable by as many people as possible without discrimination.</p>
+    </div>
+  </body>
+</html>

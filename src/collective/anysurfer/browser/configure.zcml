@@ -11,4 +11,26 @@
         layer="..interfaces.ILayerSpecific"
         />
 
+    <browser:view
+        for="*"
+        name="accessibility-view"
+        permission="zope2.Public"
+        layer="..interfaces.ILayerSpecific"
+        class=".views.AccessibilityView"
+        />
+
+    <browser:page
+        for="*"
+        name="default_accessibility_text"
+        permission="zope2.Public"
+        class=".views.DefaultPage"
+        />
+
+    <browser:page
+        name="anysurfer-settings"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class="collective.anysurfer.browser.controlpanel.AnysurferSettingsControlPanel"
+        layer="collective.anysurfer.interfaces.ILayerSpecific"
+        permission="cmf.ManagePortal"
+        />
 </configure>
