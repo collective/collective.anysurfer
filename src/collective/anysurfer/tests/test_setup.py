@@ -6,7 +6,7 @@ from collective.anysurfer.testing import\
     COLLECTIVE_ANYSURFER_INTEGRATION_TESTING
 
 
-class TestExample(unittest.TestCase):
+class TestSetup(unittest.TestCase):
 
     layer = COLLECTIVE_ANYSURFER_INTEGRATION_TESTING
     
