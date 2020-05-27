@@ -27,7 +27,7 @@ class TestTitles(unittest.TestCase):
         return self.assertIn("<title>{}</title>".format(title), page)
 
     def test_contact_title(self):
-        self.asserTitle("contact-info", "Contact information &mdash; Plone site")
+        self.asserTitle("contact-info", "Contact form &mdash; Plone site")
         browser = Browser(self.app)
         browser.open("{}/contact-info".format(self.portal.absolute_url()))
         self.assertEqual(browser.title, "Formulaire de contact — Plone site")

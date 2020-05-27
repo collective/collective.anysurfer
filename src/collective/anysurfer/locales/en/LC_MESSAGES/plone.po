@@ -19,7 +19,7 @@ msgid "Search results"
 msgstr ""
 
 msgid "Contact information"
-msgstr ""
+msgstr "Contact form"
 
 msgid "accessibility-info"
 msgstr "Accessibility"
