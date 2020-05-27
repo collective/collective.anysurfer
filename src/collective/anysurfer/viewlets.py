@@ -40,20 +40,21 @@ class TitleViewlet(common.TitleViewlet):
             elif view_name != view_title:
                 self.site_title = u"%s &mdash; %s" % (view_title, root_title)
             else:
+                self.site_title = root_title
                 try:
                     portal = api.portal.get()
                     portal.unrestrictedTraverse(
                         self.request.getURL().replace(
                             portal.absolute_url(), ""
-                        )
+                        ).lstrip("/")
                     )
-                except (AttributeError, NotFound, KeyError), e:
+                except (NotFound, KeyError), e:
                     self.site_title = u"%s &mdash; %s" % (
                         translate(u'404-error', 'plone', context=self.request),
                         root_title,
                     )
-                else:
-                    self.site_title = root_title
+                except AttributeError:
+                    pass
 
         else:
             self.site_title = u"%s &mdash; %s" % (page_title, root_title)
