@@ -1,3 +1,4 @@
+from Products.CMFCore.utils import getToolByName
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import IntegrationTesting
@@ -19,6 +20,11 @@ class CollectiveAnysurfer(PloneSandboxLayer):
 
 
     def setUpPloneSite(self, portal):
+        language_tool = getToolByName(portal, 'portal_languages')
+        language_tool.addSupportedLanguage('fr')
+        language_tool.setDefaultLanguage('fr')
+        language_tool.use_request_negotiation = True
+        language_tool.setLanguageBindings()
         applyProfile(portal, 'collective.anysurfer:default')
 
 COLLECTIVE_ANYSURFER_FIXTURE = CollectiveAnysurfer()
