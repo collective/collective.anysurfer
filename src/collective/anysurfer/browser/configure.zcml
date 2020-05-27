@@ -3,6 +3,10 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="plonetheme.intranetbric">
 
+    <!-- adapter
+        factory=".controlpanel.RichtextDataConverter"
+        /-->
+
     <browser:jbot directory="overrides" />
 
     <browser:resourceDirectory
