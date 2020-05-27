@@ -6,7 +6,6 @@ from collective.z3cform.datagridfield.registry import DictRow
 # from plone.autoform import directives as form
 from plone.autoform.directives import widget
 # from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
-from plone.supermodel import model
 from plone.theme.interfaces import IDefaultPloneLayer
 from zope import schema
 from zope.interface import Interface
@@ -21,7 +20,7 @@ class ISkinTemplateView(Interface):
 
 
 # Interface
-class ITextRowSchema(model.Schema):
+class ITextRowSchema(Interface):
 
     language = schema.TextLine(
         title=_(u"Language"),
@@ -34,7 +33,7 @@ class ITextRowSchema(model.Schema):
     )
 
 
-class IAnysurferSettings(model.Schema):
+class IAnysurferSettings(Interface):
     """Schema for the control panel form."""
 
     accessibility_translations = schema.List(

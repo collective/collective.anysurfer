@@ -1,7 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    i18n_domain="plonetheme.intranetbric">
+    i18n_domain="collective.anysurfer">
 
     <!-- adapter
         factory=".controlpanel.RichtextDataConverter"
@@ -38,8 +38,8 @@
     <browser:page
         name="anysurfer-settings"
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-        class="collective.anysurfer.browser.controlpanel.AnysurferSettingsControlPanel"
-        layer="collective.anysurfer.interfaces.ILayerSpecific"
+        class=".controlpanel.AnysurferSettingsControlPanel"
+        layer="..interfaces.ILayerSpecific"
         permission="cmf.ManagePortal"
         />
 </configure>
