@@ -4,6 +4,9 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
+- Fix 404 pages title handling
+  [laulaz]
+
 - Update/fix buildout & tests
   [boulch, laulaz]
 

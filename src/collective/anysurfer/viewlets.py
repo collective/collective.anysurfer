@@ -1,6 +1,7 @@
 import logging
 from cgi import escape
 
+from zExceptions import NotFound
 from zope.component import getMultiAdapter
 from zope.annotation.interfaces import IAnnotations
 from zope.i18n import translate
@@ -41,11 +42,11 @@ class TitleViewlet(common.TitleViewlet):
                 try:
                     portal = api.portal.get()
                     portal.unrestrictedTraverse(
-                        self.request.getURL().lstrip(
-                            portal.absolute_url()
+                        self.request.getURL().replace(
+                            portal.absolute_url(), ""
                         )
                     )
-                except KeyError:
+                except (AttributeError, NotFound, KeyError), e:
                     self.site_title = u"%s &mdash; %s" % (
                         translate(u'404-error', 'plone', context=self.request),
                         root_title,
