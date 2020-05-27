@@ -31,6 +31,7 @@ class TitleViewlet(common.TitleViewlet):
             view_title = translate(view_name, 'plone', context=self.request)
             if view_name == "search":
                 results_nb = self.view.results().sequence_length
+                view_title = translate(u'Search results', 'plone', context=self.request)
                 self.site_title = u"%s %s &mdash; %s" % (
                     results_nb,
                     view_title,
