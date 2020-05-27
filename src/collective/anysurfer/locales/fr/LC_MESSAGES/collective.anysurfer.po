@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-09-24 12:08+0000\n"
+"POT-Creation-Date: 2020-05-27 13:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,9 +14,25 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../configure.zcml:24
+#: ../profiles/default/controlpanel.xml
+msgid "Anysurfer"
+msgstr ""
+
+#: ../browser/controlpanel.py:16
+msgid "Anysurfer settings"
+msgstr "Configuration d'Anysurfer"
+
+#: ../interfaces.py:27
+msgid "Enter the language code. Ex.: en"
+msgstr "Saisissez le code linguistique. Ex : en"
+
+#: ../configure.zcml:25
 msgid "Installs the collective.anysurfer package"
 msgstr "Installe le module collective.anysurfer"
+
+#: ../interfaces.py:26
+msgid "Language"
+msgstr "Langue"
 
 #: ../transform.py:92
 msgid "News image - click to view full image"
@@ -26,6 +42,38 @@ msgstr "Illustration de l'actualité - cliquer pour agrandir"
 msgid "Required"
 msgstr "Requis"
 
-#: ../configure.zcml:24
+#: ../browser/controlpanel.py:17
+msgid "Show Anysurfer explanation."
+msgstr "Voir la documentation du module Anysurfer"
+
+#: ../interfaces.py:32
+msgid "Text"
+msgstr "Texte"
+
+#: ../interfaces.py:40
+msgid "Text to show your visitor"
+msgstr "Texte à afficher au visiteur du site"
+
+#. Default: "All the official websites of the EU institutions should follow international guidelines for accessible web content. This means that texts, images, forms, sounds, etc. should be accessible and understandable by as many people as possible without discrimination."
+#: ../browser/default_accessibility_text.pt:12
+msgid "accessibility_content"
+msgstr "Tous les sites web officiels des institutions européennes doivent se conformer à des lignes directrices internationales en matière d'accessibilité des contenus. Les textes, les images, les formulaires, les sons et autres doivent donc être accessibles et compréhensibles sans discrimination par le plus grand nombre."
+
+#. Default: "Accessibility"
+#: ../browser/default_accessibility_text.pt:8
+msgid "accessibility_title"
+msgstr "Politique en matière d'accessibilité du web"
+
+#: ../configure.zcml:25
 msgid "collective.anysurfer"
 msgstr ""
+
+#. Default: "<h1 class=\"documentFirstHeading\">x</h1> <div id=\"content-core\"> <p>x</p> </div>"
+#: ../browser/default_accessibility_text.pt:12
+msgid "default-accessibility-text"
+msgstr ""
+
+#. Default: "The text of the accessibility explanation."
+#: ../interfaces.py:42
+msgid "help_text"
+msgstr "Votre texte en matière d'accessibilité du web"

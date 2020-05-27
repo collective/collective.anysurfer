@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-09-24 12:08+0000\n"
+"POT-Creation-Date: 2020-05-27 13:52+0000\n"
 "PO-Revision-Date: 2019-08-22 15:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -15,8 +15,24 @@ msgstr ""
 "Domain: DOMAIN\n"
 "Language: nl\n"
 
-#: ../configure.zcml:24
+#: ../profiles/default/controlpanel.xml
+msgid "Anysurfer"
+msgstr ""
+
+#: ../browser/controlpanel.py:16
+msgid "Anysurfer settings"
+msgstr ""
+
+#: ../interfaces.py:27
+msgid "Enter the language code. Ex.: en"
+msgstr ""
+
+#: ../configure.zcml:25
 msgid "Installs the collective.anysurfer package"
+msgstr ""
+
+#: ../interfaces.py:26
+msgid "Language"
 msgstr ""
 
 #: ../transform.py:92
@@ -27,6 +43,38 @@ msgstr "Nieuwsafbeelding - klik om de volledige afbeelding te bekijken"
 msgid "Required"
 msgstr "Verplicht"
 
-#: ../configure.zcml:24
+#: ../browser/controlpanel.py:17
+msgid "Show Anysurfer explanation."
+msgstr ""
+
+#: ../interfaces.py:32
+msgid "Text"
+msgstr ""
+
+#: ../interfaces.py:40
+msgid "Text to show your visitor"
+msgstr ""
+
+#. Default: "All the official websites of the EU institutions should follow international guidelines for accessible web content. This means that texts, images, forms, sounds, etc. should be accessible and understandable by as many people as possible without discrimination."
+#: ../browser/default_accessibility_text.pt:12
+msgid "accessibility_content"
+msgstr ""
+
+#. Default: "Accessibility"
+#: ../browser/default_accessibility_text.pt:8
+msgid "accessibility_title"
+msgstr ""
+
+#: ../configure.zcml:25
 msgid "collective.anysurfer"
+msgstr ""
+
+#. Default: "<h1 class=\"documentFirstHeading\">x</h1> <div id=\"content-core\"> <p>x</p> </div>"
+#: ../browser/default_accessibility_text.pt:12
+msgid "default-accessibility-text"
+msgstr ""
+
+#. Default: "The text of the accessibility explanation."
+#: ../interfaces.py:42
+msgid "help_text"
 msgstr ""
