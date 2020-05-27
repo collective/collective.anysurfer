@@ -12,7 +12,11 @@ class DefaultPage(BrowserView):
 class AccessibilityView(BrowserView):
 
     def content(self):
-        text = api.portal.get_registry_record(
-            "collective.anysurfer.interfaces.IAnysurferSettings.text", default="",
+        lang = api.portal.get_current_language()
+        accessibility_translations = api.portal.get_registry_record(
+            "collective.anysurfer.interfaces.IAnysurferSettings.accessibility_translations",
         )
-        return text
+        for accessibility_translation in accessibility_translations:
+            if lang == accessibility_translation.get("language"):
+                return accessibility_translation.get("text")
+        return u""
