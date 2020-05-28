@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 from collective.anysurfer.interfaces import ILayerSpecific
 from collective.anysurfer.testing import COLLECTIVE_ANYSURFER_INTEGRATION_TESTING
+from plone import api
+from plone.app.layout.navigation.interfaces import INavigationRoot
+from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles
 from plone.testing.z2 import Browser
 from six.moves.urllib.error import HTTPError
+from zope.interface import alsoProvides
 from zope.interface import directlyProvides
 import unittest2 as unittest
 
@@ -15,6 +20,7 @@ class TestTitles(unittest.TestCase):
         self.app = self.layer["app"]
         self.portal = self.layer["portal"]
         self.request = self.layer["request"]
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
         directlyProvides(self.request, ILayerSpecific)
 
     def asserTitle(self, view_name, title):
@@ -61,3 +67,17 @@ class TestTitles(unittest.TestCase):
         self.assertEqual(
             browser.title, "Page non trouv\xc3\xa9e \xe2\x80\x94 Plone site"
         )
+
+    def test_title_without_nav_root(self):
+        self.asserTitle("", "Plone site")
+        folder = api.content.create(type="Folder", container=self.portal, id=u"folder", title=u"Folder")
+        self.asserTitle("folder", "Folder &mdash; Plone site")
+        api.content.create(type="Folder", container=folder, id=u"subfolder", title=u"Subfolder")
+        self.asserTitle("folder/subfolder", "Subfolder &mdash; Plone site")
+
+    def test_title_with_nav_root(self):
+        navroot = api.content.create(type="Folder", container=self.portal, id=u"navroot", title=u"Navroot")
+        api.content.create(type="Folder", container=navroot, id=u"subfolder", title=u"Subfolder")
+        alsoProvides(navroot, INavigationRoot)
+        self.asserTitle("navroot", "Navroot")
+        self.asserTitle("navroot/subfolder", "Subfolder &mdash; Navroot")
