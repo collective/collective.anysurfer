@@ -4,7 +4,7 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
-class DefaultPage(BrowserView):
+class AccessibilityDefaultText(BrowserView):
 
     index = ViewPageTemplateFile("default_accessibility_text.pt")
 

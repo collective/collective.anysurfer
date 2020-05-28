@@ -32,7 +32,7 @@
         for="*"
         name="default_accessibility_text"
         permission="zope2.Public"
-        class=".views.DefaultPage"
+        class=".views.AccessibilityDefaultText"
         />
 
     <browser:page
