@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.3.1 (unreleased)
+1.3.1 (2020-05-28)
 ------------------
 
 - Fix upgrade steps (1.2 -> 1.3)
