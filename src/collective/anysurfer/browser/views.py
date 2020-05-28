@@ -13,7 +13,6 @@ class AccessibilityDefaultText(BrowserView):
 
 
 class AccessibilityView(BrowserView):
-
     def content(self):
         lang = api.portal.get_current_language()
         accessibility_translations = api.portal.get_registry_record(

@@ -10,25 +10,26 @@ from zope.annotation.interfaces import IAnnotations
 from zope.component import getMultiAdapter
 from zope.i18n import translate
 
-logger = logging.getLogger('collective.anysurfer')
+logger = logging.getLogger("collective.anysurfer")
 
 
 class TitleViewlet(common.TitleViewlet):
-
     def update(self):
-        portal_state = getMultiAdapter((self.context, self.request),
-                                        name=u'plone_portal_state')
-        context_state = getMultiAdapter((self.context, self.request),
-                                         name=u'plone_context_state')
+        portal_state = getMultiAdapter(
+            (self.context, self.request), name=u"plone_portal_state"
+        )
+        context_state = getMultiAdapter(
+            (self.context, self.request), name=u"plone_context_state"
+        )
         page_title = escape(safe_unicode(context_state.object_title()))
         root_title = escape(safe_unicode(portal_state.navigation_root_title()))
         if page_title == root_title:
-            logger.warn('View without explicit title: %s' % self.request.URL)
+            logger.warn("View without explicit title: %s" % self.request.URL)
             view_name = self.view.__name__
-            view_title = translate(view_name, 'plone', context=self.request)
+            view_title = translate(view_name, "plone", context=self.request)
             if view_name == "search":
                 results_nb = self.view.results().sequence_length
-                view_title = translate(u'Search results', 'plone', context=self.request)
+                view_title = translate(u"Search results", "plone", context=self.request)
                 self.site_title = u"%s %s &mdash; %s" % (
                     results_nb,
                     view_title,
@@ -41,13 +42,13 @@ class TitleViewlet(common.TitleViewlet):
                 try:
                     portal = api.portal.get()
                     portal.unrestrictedTraverse(
-                        self.request.getURL().replace(
-                            portal.absolute_url(), ""
-                        ).lstrip("/")
+                        self.request.getURL()
+                        .replace(portal.absolute_url(), "")
+                        .lstrip("/")
                     )
                 except (NotFound, KeyError), e:
                     self.site_title = u"%s &mdash; %s" % (
-                        translate(u'404-error', 'plone', context=self.request),
+                        translate(u"404-error", "plone", context=self.request),
                         root_title,
                     )
                 except AttributeError:
@@ -58,18 +59,16 @@ class TitleViewlet(common.TitleViewlet):
 
 
 class TitleViewletForSkinTemplateView(common.TitleViewlet):
-
     def update(self):
-        portal_state = getMultiAdapter((self.context, self.request),
-                                        name=u'plone_portal_state')
+        portal_state = getMultiAdapter(
+            (self.context, self.request), name=u"plone_portal_state"
+        )
         root_title = escape(safe_unicode(portal_state.navigation_root_title()))
         template = IAnnotations(self.view)[SKIN_TEMPLATE_KEY]
         title = template.title or template.id
         if title:
-            view_title = translate(title, 'plone',
-                    context=self.request)
+            view_title = translate(title, "plone", context=self.request)
             self.site_title = u"%s &mdash; %s" % (view_title, root_title)
         else:
-            logger.warn('Skin template without explicit title: %s'
-                    % template.id)
+            logger.warn("Skin template without explicit title: %s" % template.id)
             self.site_title = root_title

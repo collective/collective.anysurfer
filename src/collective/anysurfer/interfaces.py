@@ -22,12 +22,10 @@ class ITextRowSchema(Interface):
 
     language = schema.TextLine(
         title=_(u"Language (en, fr,...)"),
-        description=_(u'Enter the language code. Ex.: en'),
+        description=_(u"Enter the language code. Ex.: en"),
     )
 
-    text = RichText(
-        title=_(u"Text"),
-    )
+    text = RichText(title=_(u"Text"),)
 
 
 class IAnysurferSettings(Interface):
@@ -35,11 +33,10 @@ class IAnysurferSettings(Interface):
 
     accessibility_translations = schema.List(
         title=_(u"Multilingual accessibility statements texts"),
-        description=_(u"This text will be available through the accessibility site action"),
-        value_type=DictRow(
-            title=u"Value",
-            schema=ITextRowSchema,
+        description=_(
+            u"This text will be available through the accessibility site action"
         ),
+        value_type=DictRow(title=u"Value", schema=ITextRowSchema,),
         defaultFactory=get_default_text_translations,
         required=True,
     )
