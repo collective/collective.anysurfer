@@ -6,8 +6,10 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="collective.anysurfer">
 
+    <includeDependencies package="." />
     <five:registerPackage package="." initialize=".initialize" />
     <include package="plone.transformchain" />
+    <include package="collective.z3cform.datagridfield" />
     <include package="z3c.jbot" file="meta.zcml" />
     <include package=".browser" />
 
@@ -56,6 +58,11 @@
         class=".context.ContextState"
         allowed_interface="plone.app.layout.globals.interfaces.IContextState"
         layer=".interfaces.ILayerSpecific"
+        />
+
+    <utility
+        factory=".setuphandlers.HiddenProfiles"
+        name="collective.anysurfer-hiddenprofiles"
         />
 
 </configure>

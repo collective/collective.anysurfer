@@ -1,0 +1,51 @@
+<html xml:lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="collective.anysurfer">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  </head>
+
+  <body>
+      <h1 class="documentFirstHeading"
+          i18n:translate="accessibility_title">Website accessibility statement</h1>
+
+      <div id="content-core">
+          <h2 i18n:translate="accessibility_introduction_title">
+              Introduction
+          </h2>
+          <p i18n:translate="accessibility_introduction">
+              All the official websites of the EU institutions should follow
+              international guidelines for accessible web content. This means
+              that texts, images, forms, sounds, etc. should be accessible and
+              understandable by as many people as possible without
+              discrimination.
+              <br />
+              We wish to promote the use of the internet by making it more
+              accessible for people with a disability in particular.
+              We are constantly improving our user experience and are applying
+              the relevant accessibility standards accordingly. 
+          </p>
+
+          <h2 i18n:translate="accessibility_level_title">
+              Level of compliance with the accessibility standard
+          </h2>
+          <p i18n:translate="accessibility_level">
+              The Web Content Accessibility Guidelines (WCAG) contains
+              standards in terms of accessibility requirements for persons with
+              a disability. There are three levels at which these rules can be
+              implemented: Level A, Level AA and Level AAA.
+          </p>
+
+          <h2 i18n:translate="accessibility_feedback_title">
+              Feedback
+          </h2>
+          <p i18n:translate="accessibility_feedback">
+              We welcome your feedback on our efforts to make our website more
+              accessible. You can contact us via our <a
+              href="contact-info">contact page</a>.
+          </p>
+      </div>
+  </body>
+</html>

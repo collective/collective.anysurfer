@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-09-24 12:08+0000\n"
+"POT-Creation-Date: 2020-05-28 09:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,32 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.anysurfer\n"
 
-#: ../configure.zcml:24
+#: ../browser/controlpanel.py:16
+msgid "Accessibility (Anysurfer) settings"
+msgstr ""
+
+#: ../profiles/default/controlpanel.xml
+msgid "Anysurfer"
+msgstr ""
+
+#: ../browser/controlpanel.py:17
+msgid "Change all the settings related to website accessibility"
+msgstr ""
+
+#: ../interfaces.py:27
+msgid "Enter the language code. Ex.: en"
+msgstr ""
+
+#: ../configure.zcml:26
 msgid "Installs the collective.anysurfer package"
+msgstr ""
+
+#: ../interfaces.py:26
+msgid "Language (en, fr,...)"
+msgstr ""
+
+#: ../interfaces.py:40
+msgid "Multilingual accessibility statements texts"
 msgstr ""
 
 #: ../transform.py:92
@@ -29,6 +53,49 @@ msgstr ""
 msgid "Required"
 msgstr ""
 
-#: ../configure.zcml:24
+#: ../interfaces.py:32
+msgid "Text"
+msgstr ""
+
+#: ../interfaces.py:41
+msgid "This text will be available through the accessibility site action"
+msgstr ""
+
+#. Default: "We welcome your feedback on our efforts to make our website more accessible. You can contact us via our <a href=\"contact-info\">contact page</a>."
+#: ../browser/default_accessibility_text.pt:44
+msgid "accessibility_feedback"
+msgstr ""
+
+#. Default: "Feedback"
+#: ../browser/default_accessibility_text.pt:41
+msgid "accessibility_feedback_title"
+msgstr ""
+
+#. Default: "All the official websites of the EU institutions should follow international guidelines for accessible web content. This means that texts, images, forms, sounds, etc. should be accessible and understandable by as many people as possible without discrimination. <br /> We wish to promote the use of the internet by making it more accessible for people with a disability in particular. We are constantly improving our user experience and are applying the relevant accessibility standards accordingly."
+#: ../browser/default_accessibility_text.pt:18
+msgid "accessibility_introduction"
+msgstr ""
+
+#. Default: "Introduction"
+#: ../browser/default_accessibility_text.pt:15
+msgid "accessibility_introduction_title"
+msgstr ""
+
+#. Default: "The Web Content Accessibility Guidelines (WCAG) contains standards in terms of accessibility requirements for persons with a disability. There are three levels at which these rules can be implemented: Level A, Level AA and Level AAA."
+#: ../browser/default_accessibility_text.pt:34
+msgid "accessibility_level"
+msgstr ""
+
+#. Default: "Level of compliance with the accessibility standard"
+#: ../browser/default_accessibility_text.pt:31
+msgid "accessibility_level_title"
+msgstr ""
+
+#. Default: "Website accessibility statement"
+#: ../browser/default_accessibility_text.pt:11
+msgid "accessibility_title"
+msgstr ""
+
+#: ../configure.zcml:26
 msgid "collective.anysurfer"
 msgstr ""

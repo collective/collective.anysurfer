@@ -12,6 +12,9 @@ This package is totally transparent for the user.
 It fixes various accessibility issues in Plone, in standard features,
 content types, body texts, ...
 
+It also overrides Plone Accessibility info skin to allow its edition through
+the Anysurfer control panel.
+
 
 Features
 --------
@@ -23,6 +26,7 @@ Features
 5. Allows empty image alt
 6. Fixes 'Required' labels html position
 7. Replace Plone replacetag="h2" by real tag
+8. Replace default Accessibility info with a multilingual editable text
 
 
 Limitations
@@ -39,7 +43,7 @@ This product has been translated into
 
 - English
 - French
-- Dutch
+- Dutch (with missing translations)
 
 
 Installation

@@ -1,9 +1,14 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    i18n_domain="plonetheme.intranetbric">
+    i18n_domain="collective.anysurfer">
 
     <browser:jbot directory="overrides" />
+
+    <browser:resourceDirectory
+        name="collective.anysurfer"
+        directory="static"
+        layer="..interfaces.ILayerSpecific" />
 
     <browser:resource
         name="search.js"
@@ -11,4 +16,26 @@
         layer="..interfaces.ILayerSpecific"
         />
 
+    <browser:view
+        for="*"
+        name="accessibility-view"
+        permission="zope2.Public"
+        layer="..interfaces.ILayerSpecific"
+        class=".views.AccessibilityView"
+        />
+
+    <browser:page
+        for="*"
+        name="default_accessibility_text"
+        permission="zope2.Public"
+        class=".views.AccessibilityDefaultText"
+        />
+
+    <browser:page
+        name="anysurfer-settings"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.AnysurferSettingsControlPanel"
+        layer="..interfaces.ILayerSpecific"
+        permission="cmf.ManagePortal"
+        />
 </configure>

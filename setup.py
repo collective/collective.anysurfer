@@ -45,6 +45,7 @@ setup(name='collective.anysurfer',
           'plone.api',
           'beautifulsoup4',
           'soupsieve<=1.9.6',
+          'collective.z3cform.datagridfield==1.2',
           # -*- Extra requirements: -*-
       ],
       extras_require={
