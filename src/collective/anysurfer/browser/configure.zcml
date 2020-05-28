@@ -3,10 +3,6 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="collective.anysurfer">
 
-    <!-- adapter
-        factory=".controlpanel.RichtextDataConverter"
-        /-->
-
     <browser:jbot directory="overrides" />
 
     <browser:resourceDirectory
