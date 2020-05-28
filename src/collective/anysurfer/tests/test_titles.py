@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
+from six.moves.urllib.error import HTTPError
+
+import unittest2 as unittest
 from collective.anysurfer.interfaces import ILayerSpecific
-from collective.anysurfer.testing import COLLECTIVE_ANYSURFER_INTEGRATION_TESTING
+from collective.anysurfer.testing import \
+    COLLECTIVE_ANYSURFER_INTEGRATION_TESTING
 from plone import api
 from plone.app.layout.navigation.interfaces import INavigationRoot
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID, setRoles
 from plone.testing.z2 import Browser
-from six.moves.urllib.error import HTTPError
-from zope.interface import alsoProvides
-from zope.interface import directlyProvides
-import unittest2 as unittest
+from zope.interface import alsoProvides, directlyProvides
 
 
 class TestTitles(unittest.TestCase):

@@ -1,9 +1,7 @@
-from Products.PageTemplates.PageTemplate import PageTemplate
-
-from Products.CMFCore.utils import getToolByName
-
-from plone.memoize.view import memoize
 from plone.app.layout.globals import context
+from plone.memoize.view import memoize
+from Products.CMFCore.utils import getToolByName
+from Products.PageTemplates.PageTemplate import PageTemplate
 
 
 class ContextState(context.ContextState):

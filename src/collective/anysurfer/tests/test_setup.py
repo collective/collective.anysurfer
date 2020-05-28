@@ -1,9 +1,7 @@
 import unittest2 as unittest
-
-from Products.CMFCore.utils import getToolByName
-
-from collective.anysurfer.testing import\
+from collective.anysurfer.testing import \
     COLLECTIVE_ANYSURFER_INTEGRATION_TESTING
+from Products.CMFCore.utils import getToolByName
 
 
 class TestSetup(unittest.TestCase):

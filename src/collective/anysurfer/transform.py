@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from bs4 import BeautifulSoup
+from collective.anysurfer import _
 from plone import api
 from plone.transformchain.interfaces import ITransform
 from zope.component import adapts
 from zope.component.hooks import getSite
 from zope.i18n import translate
-from zope.interface import Interface
-from zope.interface import implements
-
-from collective.anysurfer import _
+from zope.interface import Interface, implements
 
 
 def remove_empty_lists(soup):

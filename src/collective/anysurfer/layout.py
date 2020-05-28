@@ -1,11 +1,8 @@
-from zope.interface import alsoProvides
-from zope.component import getMultiAdapter
-from zope.annotation.interfaces import IAnnotations
-from zope.annotation.interfaces import IAttributeAnnotatable
-
-from plone.app.layout.globals import layout
-
 from collective.anysurfer.interfaces import ISkinTemplateView
+from plone.app.layout.globals import layout
+from zope.annotation.interfaces import IAnnotations, IAttributeAnnotatable
+from zope.component import getMultiAdapter
+from zope.interface import alsoProvides
 
 SKIN_TEMPLATE_KEY = 'skin_template'
 

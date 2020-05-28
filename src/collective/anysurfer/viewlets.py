@@ -1,17 +1,14 @@
 import logging
 from cgi import escape
 
-from zExceptions import NotFound
-from zope.component import getMultiAdapter
-from zope.annotation.interfaces import IAnnotations
-from zope.i18n import translate
-
-from Products.CMFPlone.utils import safe_unicode
-
-from plone.app.layout.viewlets import common
-from plone import api
-
 from collective.anysurfer.layout import SKIN_TEMPLATE_KEY
+from plone import api
+from plone.app.layout.viewlets import common
+from Products.CMFPlone.utils import safe_unicode
+from zExceptions import NotFound
+from zope.annotation.interfaces import IAnnotations
+from zope.component import getMultiAdapter
+from zope.i18n import translate
 
 logger = logging.getLogger('collective.anysurfer')
 
