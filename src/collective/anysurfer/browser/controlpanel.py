@@ -14,7 +14,7 @@ class AnysurferSettingsEditForm(controlpanel.RegistryEditForm):
 
     schema = IAnysurferSettings
     label = _(u'Anysurfer settings')
-    description = _(u'Show Anysurfer explanation.')
+    description = _(u'Thanks to this screen, you can define all Anysurfer settings.')
 
     def updateFields(self):
         super(AnysurferSettingsEditForm, self).updateFields()
@@ -25,7 +25,6 @@ class AnysurferSettingsEditForm(controlpanel.RegistryEditForm):
 
 class AnysurferSettingsControlPanel(controlpanel.ControlPanelFormWrapper):
     """Control panel form wrapper."""
-
     form = AnysurferSettingsEditForm
 
 

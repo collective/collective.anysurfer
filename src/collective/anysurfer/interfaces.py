@@ -23,7 +23,7 @@ class ISkinTemplateView(Interface):
 class ITextRowSchema(Interface):
 
     language = schema.TextLine(
-        title=_(u"Language"),
+        title=_(u"Language (en, fr,...)"),
         description=_(u'Enter the language code. Ex.: en'),
     )
 
@@ -37,10 +37,10 @@ class IAnysurferSettings(Interface):
     """Schema for the control panel form."""
 
     accessibility_translations = schema.List(
-        title=_(u"Text to show your visitor"),
+        title=_(u"Accessibility statement texts"),
         required=True,
         description=_(
-            u"help_text", default=u"The text of the accessibility explanation."
+            u"help_text", default=u"Your multilingual accessibility statement texts"
         ),
         value_type=DictRow(
             title=u"Value",
