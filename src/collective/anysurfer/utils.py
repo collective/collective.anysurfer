@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from plone import api
+from plone.app.textfield.value import RichTextValue
 from Products.PortalTransforms.libtransforms.utils import bodyfinder
 
 
@@ -27,6 +28,6 @@ def get_default_text_translations():
                 if not isinstance(text, unicode):
                     text = text.decode("utf-8")
                 text_translation["language"] = language.decode("utf-8")
-                text_translation["text"] = text
+                text_translation["text"] = RichTextValue(text, "text/html", "text/html")
                 texts.append(text_translation)
     return texts

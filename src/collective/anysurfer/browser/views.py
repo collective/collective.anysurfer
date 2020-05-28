@@ -21,5 +21,5 @@ class AccessibilityView(BrowserView):
         )
         for accessibility_translation in accessibility_translations:
             if lang == accessibility_translation.get("language"):
-                return accessibility_translation.get("text")
+                return accessibility_translation.get("text").output
         return u""

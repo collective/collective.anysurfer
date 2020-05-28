@@ -4,6 +4,7 @@ from collective.anysurfer.utils import get_default_text_translations
 from collective.z3cform.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.registry import DictRow
 # from plone.autoform import directives as form
+from plone.app.textfield import RichText
 from plone.autoform.directives import widget
 # from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.theme.interfaces import IDefaultPloneLayer
@@ -28,7 +29,7 @@ class ITextRowSchema(Interface):
     )
 
 #    form.widget("text", WysiwygFieldWidget)
-    text = schema.Text(
+    text = RichText(
         title=_(u"Text"),
     )
 
