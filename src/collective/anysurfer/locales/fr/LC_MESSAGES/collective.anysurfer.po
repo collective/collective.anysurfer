@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-05-27 13:52+0000\n"
+"POT-Creation-Date: 2020-05-28 09:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,25 +14,33 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+#: ../browser/controlpanel.py:16
+msgid "Accessibility (Anysurfer) settings"
+msgstr "Configuration de l'accessibilité (Anysurfer)"
+
 #: ../profiles/default/controlpanel.xml
 msgid "Anysurfer"
 msgstr ""
 
-#: ../browser/controlpanel.py:16
-msgid "Anysurfer settings"
-msgstr "Configuration d'Anysurfer"
+#: ../browser/controlpanel.py:17
+msgid "Change all the settings related to website accessibility"
+msgstr "Modifiez les paramètres liés à l'accessibilité du site"
 
 #: ../interfaces.py:27
 msgid "Enter the language code. Ex.: en"
 msgstr "Saisissez le code linguistique. Ex : en"
 
-#: ../configure.zcml:25
+#: ../configure.zcml:26
 msgid "Installs the collective.anysurfer package"
 msgstr "Installe le module collective.anysurfer"
 
 #: ../interfaces.py:26
-msgid "Language"
-msgstr "Langue"
+msgid "Language (en, fr,...)"
+msgstr "Langue (en, fr, ...)"
+
+#: ../interfaces.py:40
+msgid "Multilingual accessibility statements texts"
+msgstr "Textes des déclarations d'accessibilité dans chaque langue"
 
 #: ../transform.py:92
 msgid "News image - click to view full image"
@@ -42,38 +50,49 @@ msgstr "Illustration de l'actualité - cliquer pour agrandir"
 msgid "Required"
 msgstr "Requis"
 
-#: ../browser/controlpanel.py:17
-msgid "Show Anysurfer explanation."
-msgstr "Voir la documentation du module Anysurfer"
-
 #: ../interfaces.py:32
 msgid "Text"
 msgstr "Texte"
 
-#: ../interfaces.py:40
-msgid "Text to show your visitor"
-msgstr "Texte à afficher au visiteur du site"
+#: ../interfaces.py:41
+msgid "This text will be available through the accessibility site action"
+msgstr "Ce texte sera disponible via l'action Accessibilité"
 
-#. Default: "All the official websites of the EU institutions should follow international guidelines for accessible web content. This means that texts, images, forms, sounds, etc. should be accessible and understandable by as many people as possible without discrimination."
-#: ../browser/default_accessibility_text.pt:12
-msgid "accessibility_content"
-msgstr "Tous les sites web officiels des institutions européennes doivent se conformer à des lignes directrices internationales en matière d'accessibilité des contenus. Les textes, les images, les formulaires, les sons et autres doivent donc être accessibles et compréhensibles sans discrimination par le plus grand nombre."
+#. Default: "We welcome your feedback on our efforts to make our website more accessible. You can contact us via our <a href=\"contact-info\">contact page</a>."
+#: ../browser/default_accessibility_text.pt:44
+msgid "accessibility_feedback"
+msgstr "Nous apprécions de recueillir votre avis sur les efforts que nous déployons afin de rendre notre site web plus accessible. Faites-nous part de vos remarques et suggestions via notre <a href=\"contact-info\">formulaire de contact</a>."
 
-#. Default: "Accessibility"
-#: ../browser/default_accessibility_text.pt:8
+#. Default: "Feedback"
+#: ../browser/default_accessibility_text.pt:41
+msgid "accessibility_feedback_title"
+msgstr "Remarques"
+
+#. Default: "All the official websites of the EU institutions should follow international guidelines for accessible web content. This means that texts, images, forms, sounds, etc. should be accessible and understandable by as many people as possible without discrimination. <br /> We wish to promote the use of the internet by making it more accessible for people with a disability in particular. We are constantly improving our user experience and are applying the relevant accessibility standards accordingly."
+#: ../browser/default_accessibility_text.pt:18
+msgid "accessibility_introduction"
+msgstr "Tous les sites web officiels des institutions européennes doivent se conformer à des lignes directrices internationales en matière d'accessibilité des contenus. Les textes, les images, les formulaires, les sons et autres doivent donc être accessibles et compréhensibles sans discrimination par le plus grand nombre.<br />Nous souhaitons promouvoir l'usage de l'internet en le rendant plus accessible notamment aux personnes souffrant d'un handicap. Nous améliorons sans relâche l'expérience de l'utilisateur en respectant  les normes d'accessibilité pertinentes."
+
+#. Default: "Introduction"
+#: ../browser/default_accessibility_text.pt:15
+msgid "accessibility_introduction_title"
+msgstr "Introduction"
+
+#. Default: "The Web Content Accessibility Guidelines (WCAG) contains standards in terms of accessibility requirements for persons with a disability. There are three levels at which these rules can be implemented: Level A, Level AA and Level AAA."
+#: ../browser/default_accessibility_text.pt:34
+msgid "accessibility_level"
+msgstr "Les Web Content Accessibility Guidelines (WCAG) rassemblent les normes applicables en matière d'exigences d'accessibilité pour les personnes souffrant d'un handicap. Ces règles peuvent être mises en œuvre à trois niveaux : niveau A, niveau AA et niveau AAA."
+
+#. Default: "Level of compliance with the accessibility standard"
+#: ../browser/default_accessibility_text.pt:31
+msgid "accessibility_level_title"
+msgstr "Niveau de conformité à la norme d'accessibilité"
+
+#. Default: "Website accessibility statement"
+#: ../browser/default_accessibility_text.pt:11
 msgid "accessibility_title"
-msgstr "Politique en matière d'accessibilité du web"
+msgstr "Déclaration d'accessibilité du site"
 
-#: ../configure.zcml:25
+#: ../configure.zcml:26
 msgid "collective.anysurfer"
 msgstr ""
-
-#. Default: "<h1 class=\"documentFirstHeading\">x</h1> <div id=\"content-core\"> <p>x</p> </div>"
-#: ../browser/default_accessibility_text.pt:12
-msgid "default-accessibility-text"
-msgstr ""
-
-#. Default: "The text of the accessibility explanation."
-#: ../interfaces.py:42
-msgid "help_text"
-msgstr "Votre texte en matière d'accessibilité du web"

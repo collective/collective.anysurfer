@@ -37,15 +37,13 @@ class IAnysurferSettings(Interface):
     """Schema for the control panel form."""
 
     accessibility_translations = schema.List(
-        title=_(u"Accessibility statement texts"),
-        required=True,
-        description=_(
-            u"help_text", default=u"Your multilingual accessibility statement texts"
-        ),
+        title=_(u"Multilingual accessibility statements texts"),
+        description=_(u"This text will be available through the accessibility site action"),
         value_type=DictRow(
             title=u"Value",
             schema=ITextRowSchema,
         ),
         defaultFactory=get_default_text_translations,
+        required=True,
     )
     widget(accessibility_translations=DataGridFieldFactory)

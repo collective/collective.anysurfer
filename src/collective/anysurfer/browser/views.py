@@ -8,6 +8,9 @@ class DefaultPage(BrowserView):
 
     index = ViewPageTemplateFile("default_accessibility_text.pt")
 
+    def root_url(self):
+        return api.portal.get_navigation_root(self.context).absolute_url()
+
 
 class AccessibilityView(BrowserView):
 

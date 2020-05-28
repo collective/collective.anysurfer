@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-05-27 13:52+0000\n"
+"POT-Creation-Date: 2020-05-28 09:02+0000\n"
 "PO-Revision-Date: 2019-08-22 15:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -15,24 +15,32 @@ msgstr ""
 "Domain: DOMAIN\n"
 "Language: nl\n"
 
+#: ../browser/controlpanel.py:16
+msgid "Accessibility (Anysurfer) settings"
+msgstr ""
+
 #: ../profiles/default/controlpanel.xml
 msgid "Anysurfer"
 msgstr ""
 
-#: ../browser/controlpanel.py:16
-msgid "Anysurfer settings"
+#: ../browser/controlpanel.py:17
+msgid "Change all the settings related to website accessibility"
 msgstr ""
 
 #: ../interfaces.py:27
 msgid "Enter the language code. Ex.: en"
 msgstr ""
 
-#: ../configure.zcml:25
+#: ../configure.zcml:26
 msgid "Installs the collective.anysurfer package"
 msgstr ""
 
 #: ../interfaces.py:26
-msgid "Language"
+msgid "Language (en, fr,...)"
+msgstr ""
+
+#: ../interfaces.py:40
+msgid "Multilingual accessibility statements texts"
 msgstr ""
 
 #: ../transform.py:92
@@ -43,38 +51,49 @@ msgstr "Nieuwsafbeelding - klik om de volledige afbeelding te bekijken"
 msgid "Required"
 msgstr "Verplicht"
 
-#: ../browser/controlpanel.py:17
-msgid "Show Anysurfer explanation."
-msgstr ""
-
 #: ../interfaces.py:32
 msgid "Text"
 msgstr ""
 
-#: ../interfaces.py:40
-msgid "Text to show your visitor"
+#: ../interfaces.py:41
+msgid "This text will be available through the accessibility site action"
 msgstr ""
 
-#. Default: "All the official websites of the EU institutions should follow international guidelines for accessible web content. This means that texts, images, forms, sounds, etc. should be accessible and understandable by as many people as possible without discrimination."
-#: ../browser/default_accessibility_text.pt:12
-msgid "accessibility_content"
-msgstr ""
+#. Default: "We welcome your feedback on our efforts to make our website more accessible. You can contact us via our <a href=\"contact-info\">contact page</a>."
+#: ../browser/default_accessibility_text.pt:44
+msgid "accessibility_feedback"
+msgstr "Wij verwelkomen jouw feedback op onze inspanningen om onze website meer toegankelijk te maken. Je kan contact met ons opnemen via <a href=\"contact-info\">onze contactpagina</a>."
 
-#. Default: "Accessibility"
-#: ../browser/default_accessibility_text.pt:8
+#. Default: "Feedback"
+#: ../browser/default_accessibility_text.pt:41
+msgid "accessibility_feedback_title"
+msgstr "Feedback"
+
+#. Default: "All the official websites of the EU institutions should follow international guidelines for accessible web content. This means that texts, images, forms, sounds, etc. should be accessible and understandable by as many people as possible without discrimination. <br /> We wish to promote the use of the internet by making it more accessible for people with a disability in particular. We are constantly improving our user experience and are applying the relevant accessibility standards accordingly."
+#: ../browser/default_accessibility_text.pt:18
+msgid "accessibility_introduction"
+msgstr "Wij willen het gebruik van het internet promoten door het toegankelijker te maken voor o.a. mensen met een beperking.<br />Wij verbeteren voortdurend onze gebruikerservaring en passen hierbij de relevante toegankelijkheidsstandaarden toe. "
+
+#. Default: "Introduction"
+#: ../browser/default_accessibility_text.pt:15
+msgid "accessibility_introduction_title"
+msgstr "Introductie"
+
+#. Default: "The Web Content Accessibility Guidelines (WCAG) contains standards in terms of accessibility requirements for persons with a disability. There are three levels at which these rules can be implemented: Level A, Level AA and Level AAA."
+#: ../browser/default_accessibility_text.pt:34
+msgid "accessibility_level"
+msgstr "De Web Content Accessibility Guidelines (WCAG) bevat de standaarden op het vlak van toegankelijkheidsvereisten voor mensen met een beperking. Er zijn drie niveaus waarop men deze regels kan implementeren: niveau A, niveau AA en niveau AAA."
+
+#. Default: "Level of compliance with the accessibility standard"
+#: ../browser/default_accessibility_text.pt:31
+msgid "accessibility_level_title"
+msgstr "Niveau van conformiteit aan de toegankelijkheidsstandaard"
+
+#. Default: "Website accessibility statement"
+#: ../browser/default_accessibility_text.pt:11
 msgid "accessibility_title"
-msgstr ""
+msgstr "Toegankelijkheidsverklaring"
 
-#: ../configure.zcml:25
+#: ../configure.zcml:26
 msgid "collective.anysurfer"
-msgstr ""
-
-#. Default: "<h1 class=\"documentFirstHeading\">x</h1> <div id=\"content-core\"> <p>x</p> </div>"
-#: ../browser/default_accessibility_text.pt:12
-msgid "default-accessibility-text"
-msgstr ""
-
-#. Default: "The text of the accessibility explanation."
-#: ../interfaces.py:42
-msgid "help_text"
 msgstr ""
