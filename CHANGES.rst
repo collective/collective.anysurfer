@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.2.3 (unreleased)
-------------------
+1.3 (2020-05-28)
+----------------
 
 - Override Accessibility info with a multilingual / editable / filled by default
   text. The text can be changed in a new Anysurfer control panel (upgrade step
