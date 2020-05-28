@@ -21,8 +21,9 @@ class TestTitles(unittest.TestCase):
         physical_path = list(self.portal.getPhysicalPath())
         physical_path.append(view_name)
         url = "/".join(physical_path)
-        self.request.set("URL", url)
-        self.request.set("ACTUAL_URL", url)
+        full_url = "/".join([self.portal.absolute_url(), view_name])
+        self.request.set("URL", full_url)
+        self.request.set("ACTUAL_URL", full_url)
         page = self.portal.unrestrictedTraverse(url)()
         return self.assertIn("<title>{}</title>".format(title), page)
 
