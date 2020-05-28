@@ -6,16 +6,16 @@
   <genericsetup:upgradeStep
     source="0001"
     destination="0002"
-    title="Update Anysurfer default template"
+    title="Update Anysurfer settings registry (includes default accessibility texts)"
     description=""
     profile="collective.anysurfer:default"
-    handler=".upgrades.udpate_default_template"
+    handler=".upgrades.update_registry"
     />
 
   <genericsetup:upgradeStep
     source="0002"
     destination="0003"
-    title="Add control panel"
+    title="Add Anysurfer control panel"
     description=""
     profile="collective.anysurfer:default"
     handler=".upgrades.add_control_panel"

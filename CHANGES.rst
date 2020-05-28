@@ -4,7 +4,8 @@ Changelog
 1.3.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix upgrade steps (1.2 -> 1.3)
+  [laulaz]
 
 
 1.3 (2020-05-28)
