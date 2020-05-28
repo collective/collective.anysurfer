@@ -4,14 +4,13 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
+- Override Accessibility info with a multilingual / editable / filled by default
+  text. The text can be changed in a new Anysurfer control panel (upgrade step
+  included)
+  [boulch, laulaz]
+
 - Fix 404 / EN pages title handling
   [laulaz]
-
-- New upgrade step : Add control panel.
-  [boulch]
-
-- Add setuphandler and upgradestep to set default accessibility text in registry.
-  [boulch]
 
 - Update/fix buildout & tests
   [boulch, laulaz]
