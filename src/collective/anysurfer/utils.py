@@ -20,7 +20,7 @@ def get_default_text_translations():
     view_name = "default_accessibility_text"
     request = getattr(portal, "REQUEST", None)
     texts = []
-    language_tool = api.portal.get_tool('portal_languages')
+    language_tool = api.portal.get_tool("portal_languages")
     store_request_negotiation = language_tool.use_request_negotiation
     language_tool.use_request_negotiation = True
     if request is not None:
