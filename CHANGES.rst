@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.3.2 (unreleased)
+1.3.2 (2020-06-15)
 ------------------
 
 - Fix multilingual default text translations at install : #3
