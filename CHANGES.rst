@@ -4,7 +4,8 @@ Changelog
 1.3.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Avoid traversal error with unicode urls
+  [laulaz]
 
 
 1.3.2 (2020-06-15)

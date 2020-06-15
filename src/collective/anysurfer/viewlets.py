@@ -43,6 +43,7 @@ class TitleViewlet(common.TitleViewlet):
                     portal = api.portal.get()
                     portal.unrestrictedTraverse(
                         self.request.getURL()
+                        .encode("utf-8")
                         .replace(portal.absolute_url(), "")
                         .lstrip("/")
                     )
