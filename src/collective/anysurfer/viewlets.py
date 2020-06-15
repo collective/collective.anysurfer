@@ -35,7 +35,7 @@ class TitleViewlet(common.TitleViewlet):
                     view_title,
                     root_title,
                 )
-            elif view_name != view_title:
+            elif view_name is not None and view_name != view_title:
                 self.site_title = u"%s &mdash; %s" % (view_title, root_title)
             else:
                 self.site_title = root_title

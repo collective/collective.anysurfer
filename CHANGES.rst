@@ -4,6 +4,9 @@ Changelog
 1.3.3 (unreleased)
 ------------------
 
+- Avoid displaying 'None' title for unknown browser views
+  [laulaz]
+
 - Avoid traversal error with unicode urls
   [laulaz]
 
