@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.3.3 (unreleased)
+1.3.3 (2020-06-17)
 ------------------
 
 - Avoid displaying 'None' title for unknown browser views
