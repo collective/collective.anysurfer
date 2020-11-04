@@ -4,7 +4,8 @@ Changelog
 1.3.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Content types images should be inside links in search results
+  [laulaz]
 
 
 1.3.3 (2020-06-17)
