@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.3.4 (unreleased)
+1.3.4 (2020-11-04)
 ------------------
 
 - Content types images should be inside links in search results
