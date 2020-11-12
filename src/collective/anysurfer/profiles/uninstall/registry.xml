@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <registry>
  <records interface="collective.anysurfer.interfaces.IAnysurferSettings"
-          delete="True"/>
+          remove="True"/>
 </registry>
