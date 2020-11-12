@@ -1,5 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="collective.anysurfer">
 
@@ -11,8 +12,15 @@
         layer="..interfaces.ILayerSpecific" />
 
     <browser:resource
+        zcml:condition="have plone-5"
         name="search.js"
-        file="search.js"
+        file="search_plone5.js"
+        layer="..interfaces.ILayerSpecific"
+        />
+    <browser:resource
+        zcml:condition="not-have plone-5"
+        name="search.js"
+        file="search_plone4.js"
         layer="..interfaces.ILayerSpecific"
         />
 
