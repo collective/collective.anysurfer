@@ -1,6 +1,7 @@
 import logging
-from cgi import escape
+import six
 
+from cgi import escape
 from collective.anysurfer.layout import SKIN_TEMPLATE_KEY
 from plone import api
 from plone.app.layout.viewlets import common
@@ -41,13 +42,13 @@ class TitleViewlet(common.TitleViewlet):
                 self.site_title = root_title
                 try:
                     portal = api.portal.get()
-                    portal.unrestrictedTraverse(
-                        self.request.getURL()
-                        .encode("utf-8")
-                        .replace(portal.absolute_url(), "")
-                        .lstrip("/")
-                    )
-                except (NotFound, KeyError), e:
+                    url = self.request.getURL()
+                    if six.PY2:
+                        url = url.encode("utf8")
+                    url = url.replace(portal.absolute_url(), "").lstrip("/")
+                    portal.unrestrictedTraverse(url)
+
+                except (NotFound, KeyError):
                     self.site_title = u"%s &mdash; %s" % (
                         translate(u"404-error", "plone", context=self.request),
                         root_title,
