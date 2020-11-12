@@ -1,8 +1,16 @@
 # -*- coding: utf-8 -*-
+import six
+
+from collective.anysurfer import HAS_PLONE_5
 from plone import api
+from plone.registry.interfaces import IRegistry
 from plone.app.textfield.value import RichTextValue
 from Products.PortalTransforms.libtransforms.utils import bodyfinder
-from zope.annotation.interfaces import IAnnotations
+from zope.component import getUtility
+
+if HAS_PLONE_5:
+    from plone.i18n.utility import setLanguageBinding
+    from Products.CMFPlone.interfaces import ILanguageSchema
 
 
 def get_langs():
@@ -19,26 +27,38 @@ def get_default_text_translations():
     portal = api.portal.get()
     view_name = "default_accessibility_text"
     request = getattr(portal, "REQUEST", None)
+    if "PARENTS" not in request:
+        request["PARENTS"] = [portal, portal.aq_parent]
+    dummy_request = request.clone()
     texts = []
-    language_tool = api.portal.get_tool("portal_languages")
-    store_request_negotiation = language_tool.use_request_negotiation
-    language_tool.use_request_negotiation = True
-    if request is not None:
+    if HAS_PLONE_5:
+        registry = getUtility(IRegistry)
+        language_settings = registry.forInterface(ILanguageSchema, prefix='plone')
+        store_cookie_negotiation = language_settings.use_cookie_negotiation
+        language_settings.use_cookie_negotiation = True
+        setLanguageBinding(request)
+    else:
+        language_tool = api.portal.get_tool("portal_languages")
+        store_cookie_negotiation = language_tool.use_cookie_negotiation
+        language_tool.use_cookie_negotiation = True
+
+    if dummy_request is not None:
         for language in get_langs():
             text_translation = {}
             # Force language into request
-            request["HTTP_ACCEPT_LANGUAGE"] = language
-            language_tool.setLanguageBindings()
+            dummy_request["HTTP_ACCEPT_LANGUAGE"] = language            
+            dummy_request["set_language"] = language
             view = api.content.get_view(name=view_name, context=portal, request=request)
             if view is not None:
                 text = bodyfinder(view.index()).strip()
-                if not isinstance(text, unicode):
-                    text = text.decode("utf-8")
-                text_translation["language"] = language.decode("utf-8")
+                if six.PY2:
+                    text_translation["language"] = language.decode("utf8")
+                else:
+                    text_translation["language"] = language
                 text_translation["text"] = RichTextValue(text, "text/html", "text/html")
                 texts.append(text_translation)
-            # Clear language negociation cache
-            IAnnotations(request).clear()
-    language_tool.use_request_negotiation = store_request_negotiation
-    language_tool.setLanguageBindings()
+    if HAS_PLONE_5:
+        language_settings.use_cookie_negotiation = store_cookie_negotiation
+    else:
+        language_tool.use_cookie_negotiation = store_cookie_negotiation
     return texts
