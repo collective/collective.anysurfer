@@ -26,6 +26,14 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="collective.anysurfer"
+        directory="profiles/uninstall"
+        description="Uninstalls the collective.anysurfer package"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
     <browser:viewlet
         name="plone.htmlhead.title"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"

@@ -4,7 +4,8 @@ Changelog
 1.3.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add uninstall profile
+  [laulaz]
 
 
 1.3.4 (2020-11-04)
