@@ -24,3 +24,12 @@ class TestSetup(unittest.TestCase):
             installed
         """
         self.assertTrue(self.installer.isProductInstalled("collective.anysurfer"))
+
+    def test_default_text_translations(self):
+        """ Validate that text is (force) translated during the setup process
+        """
+        texts = api.portal.get_registry_record(
+            "collective.anysurfer.interfaces.IAnysurferSettings.accessibility_translations"
+        )
+        self.assertEqual(len(texts), 2)
+        self.assertNotEqual(texts[0]["text"].output, texts[1]["text"].output)
