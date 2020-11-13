@@ -62,6 +62,15 @@ Install collective.anysurfer by adding it to your buildout::
 and then running ``bin/buildout``
 
 
+Versions
+--------
+
+If you use Plone 4, be careful that you must pin those egg versions::
+
+    collective.z3cform.datagridfield = 1.2
+    soupsieve = 1.9.6
+
+
 Contribute
 ----------
 
