@@ -6,6 +6,7 @@ from plone import api
 from plone.registry.interfaces import IRegistry
 from plone.app.textfield.value import RichTextValue
 from Products.PortalTransforms.libtransforms.utils import bodyfinder
+from zope.annotation.interfaces import IAnnotations
 from zope.component import getUtility
 
 if HAS_PLONE_5:
@@ -27,38 +28,41 @@ def get_default_text_translations():
     portal = api.portal.get()
     view_name = "default_accessibility_text"
     request = getattr(portal, "REQUEST", None)
-    if "PARENTS" not in request:
-        request["PARENTS"] = [portal, portal.aq_parent]
-    dummy_request = request.clone()
+    if request is None:
+        return
     texts = []
     if HAS_PLONE_5:
         registry = getUtility(IRegistry)
         language_settings = registry.forInterface(ILanguageSchema, prefix='plone')
         store_cookie_negotiation = language_settings.use_cookie_negotiation
         language_settings.use_cookie_negotiation = True
-        setLanguageBinding(request)
     else:
         language_tool = api.portal.get_tool("portal_languages")
         store_cookie_negotiation = language_tool.use_cookie_negotiation
         language_tool.use_cookie_negotiation = True
 
-    if dummy_request is not None:
-        for language in get_langs():
-            text_translation = {}
-            # Force language into request
-            dummy_request["HTTP_ACCEPT_LANGUAGE"] = language            
-            dummy_request["set_language"] = language
-            view = api.content.get_view(name=view_name, context=portal, request=request)
-            if view is not None:
-                text = bodyfinder(view.index()).strip()
-                if six.PY2:
-                    text_translation["language"] = language.decode("utf8")
-                else:
-                    text_translation["language"] = language
-                text_translation["text"] = RichTextValue(text, "text/html", "text/html")
-                texts.append(text_translation)
+    for language in get_langs():
+        text_translation = {}
+        # Force language into request
+        request["set_language"] = language
+        if HAS_PLONE_5:
+            setLanguageBinding(request)
+        else:
+            language_tool.setLanguageBindings()
+        view = api.content.get_view(name=view_name, context=portal, request=request)
+        if view is not None:
+            text = bodyfinder(view.index()).strip()
+            if six.PY2:
+                text_translation["language"] = language.decode("utf8")
+            else:
+                text_translation["language"] = language
+            text_translation["text"] = RichTextValue(text, "text/html", "text/html")
+            texts.append(text_translation)
+        if not HAS_PLONE_5:
+            IAnnotations(request).clear()
     if HAS_PLONE_5:
         language_settings.use_cookie_negotiation = store_cookie_negotiation
     else:
         language_tool.use_cookie_negotiation = store_cookie_negotiation
+    del request.other['set_language']
     return texts
