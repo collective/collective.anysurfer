@@ -10,9 +10,9 @@ Anysurfer is a Belgian accessibility standard equivalent to WCAG 2.0 A.
 
 This package is totally transparent for the user.
 It fixes various accessibility issues in Plone, in standard features,
-content types, body texts, ...
+content types, body texts, forms, search results, ...
 
-It also overrides Plone Accessibility info skin to allow its edition through
+It also overrides Plone Accessibility info to allow its edition through
 the Anysurfer control panel.
 
 
@@ -20,20 +20,20 @@ Features
 --------
 
 1. Adds missing page titles for views / skins / 404 error page
-2. Improves search results count (in H1 and page title)
-3. Fixes News item image alt
-4. Removes empty <ul> lists
-5. Allows empty image alt
-6. Fixes 'Required' labels html position
-7. Replace Plone replacetag="h2" by real tag
-8. Replace default Accessibility info with a multilingual editable text
+2. Add search results count in H1 and move H1 to the top
+3. Add search results count in page title
+4. Fixes News item image alt
+5. Removes empty <ul> lists
+6. Allows empty image alt
+7. Fixes 'Required' labels html position
+8. Replace Plone replacetag="h2" by real tag
+9. Replace default Accessibility info with a multilingual editable text
 
 
 Limitations
 -----------
 
-This add-on has been developed on Plone 4.3.
-It is not yet fully compatible with Plone 5.
+This add-on has been developed on Plone 4.3 (Python 2) and Plone 5.2 (Python 3).
 
 
 Translations
