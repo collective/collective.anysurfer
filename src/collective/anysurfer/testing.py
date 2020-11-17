@@ -25,8 +25,6 @@ class CollectiveAnysurfer(PloneSandboxLayer):
         language_tool = getToolByName(portal, "portal_languages")
         language_tool.addSupportedLanguage("fr")
         language_tool.setDefaultLanguage("fr")
-        language_tool.use_request_negotiation = True
-        language_tool.setLanguageBindings()
         applyProfile(portal, "collective.anysurfer:default")
 
 

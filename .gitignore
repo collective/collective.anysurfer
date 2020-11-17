@@ -9,3 +9,4 @@ var/
 *.egg-info/
 .installed.cfg
 .mr.developer.cfg
+pyvenv.cfg

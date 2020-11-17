@@ -33,39 +33,34 @@ class TestTitles(unittest.TestCase):
         return self.assertIn("<title>{}</title>".format(title), page)
 
     def test_contact_title(self):
-        self.asserTitle("contact-info", "Contact form &mdash; Plone site")
         browser = Browser(self.app)
         browser.open("{}/contact-info".format(self.portal.absolute_url()))
         self.assertEqual(browser.title, "Formulaire de contact — Plone site")
 
     def test_accessibbility_title(self):
-        self.asserTitle("accessibility-info", "Accessibility &mdash; Plone site")
         browser = Browser(self.app)
         browser.open("{}/accessibility-info".format(self.portal.absolute_url()))
-        self.assertEqual(browser.title, "Accessibilit\xc3\xa9 \xe2\x80\x94 Plone site")
+        self.assertEqual(browser.title, "Accessibilité — Plone site")
 
     def test_sitemap_title(self):
-        self.asserTitle("sitemap", "Site map &mdash; Plone site")
         browser = Browser(self.app)
         browser.open("{}/sitemap".format(self.portal.absolute_url()))
-        self.assertEqual(browser.title, "Plan du site \xe2\x80\x94 Plone site")
+        self.assertEqual(browser.title, "Plan du site — Plone site")
 
     def test_search_title(self):
-        self.asserTitle("search", "0 Search results &mdash; Plone site")
         browser = Browser(self.app)
         browser.open("{}/search".format(self.portal.absolute_url()))
         self.assertEqual(browser.title, "0 Résultats de recherche — Plone site")
 
     def test_404_title(self):
         browser = Browser(self.app)
+        browser.addHeader("Accept", "text/html")
         try:
             browser.open("{}/notexisting".format(self.portal.absolute_url()))
         except HTTPError as e:
             error = e
         self.assertEqual(error.code, 404)
-        self.assertEqual(
-            browser.title, "Page non trouv\xc3\xa9e \xe2\x80\x94 Plone site"
-        )
+        self.assertEqual(browser.title, "Page non trouvée — Plone site")
 
     def test_title_without_nav_root(self):
         self.asserTitle("", "Plone site")

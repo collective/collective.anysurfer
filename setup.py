@@ -1,7 +1,6 @@
 from setuptools import setup, find_packages
-import os
 
-version = '1.3.5.dev0'
+version = "1.3.5.dev0"
 
 long_description = (
     open("README.rst").read() + "\n" + "Contributors\n"
@@ -24,8 +23,10 @@ setup(
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: 4.3",
+        "Framework :: Plone :: 5.2",
         "Programming Language :: Python",
         "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.7",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
@@ -44,11 +45,10 @@ setup(
         "z3c.jbot",
         "plone.api",
         "beautifulsoup4",
-        "soupsieve<=1.9.6",
-        "collective.z3cform.datagridfield==1.2",
+        "collective.z3cform.datagridfield",
         # -*- Extra requirements: -*-
     ],
-    extras_require={"test": ["plone.app.testing", "unittest2",]},
+    extras_require={"test": ["plone.app.testing", "unittest2", ]},
     entry_points="""
       # -*- Entry points: -*-
   	  [z3c.autoinclude.plugin]

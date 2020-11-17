@@ -1,6 +1,10 @@
 import unittest2 as unittest
 from collective.anysurfer.testing import COLLECTIVE_ANYSURFER_INTEGRATION_TESTING
-from Products.CMFCore.utils import getToolByName
+from plone import api
+try:
+    from Products.CMFPlone.utils import get_installer
+except ImportError:
+    get_installer = None
 
 
 class TestSetup(unittest.TestCase):
@@ -10,12 +14,22 @@ class TestSetup(unittest.TestCase):
     def setUp(self):
         self.app = self.layer["app"]
         self.portal = self.layer["portal"]
-        self.qi_tool = getToolByName(self.portal, "portal_quickinstaller")
+        if get_installer:
+            self.installer = get_installer(self.portal, self.layer["request"])
+        else:
+            self.installer = api.portal.get_tool("portal_quickinstaller")
 
     def test_product_is_installed(self):
-        """ Validate that our products GS profile has been run and the product 
+        """ Validate that our products GS profile has been run and the product
             installed
         """
-        pid = "collective.anysurfer"
-        installed = [p["id"] for p in self.qi_tool.listInstalledProducts()]
-        self.assertTrue(pid in installed, "package appears not to have been installed")
+        self.assertTrue(self.installer.isProductInstalled("collective.anysurfer"))
+
+    def test_default_text_translations(self):
+        """ Validate that text is (force) translated during the setup process
+        """
+        texts = api.portal.get_registry_record(
+            "collective.anysurfer.interfaces.IAnysurferSettings.accessibility_translations"
+        )
+        self.assertEqual(len(texts), 2)
+        self.assertNotEqual(texts[0]["text"].output, texts[1]["text"].output)

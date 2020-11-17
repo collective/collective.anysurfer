@@ -7,7 +7,7 @@ from plone.transformchain.interfaces import ITransform
 from zope.component import adapts
 from zope.component.hooks import getSite
 from zope.i18n import translate
-from zope.interface import Interface, implements
+from zope.interface import Interface, implementer
 
 
 def remove_empty_lists(soup):
@@ -100,8 +100,8 @@ def add_alt_on_all_images(soup):
         tag["alt"] = ""
 
 
+@implementer(ITransform)
 class AnySurfer(object):
-    implements(ITransform)
     adapts(Interface, Interface)
     order = 9000
 

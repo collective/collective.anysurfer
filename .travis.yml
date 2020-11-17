@@ -1,16 +1,24 @@
+os: linux
+dist: xenial
 language: python
-sudo: true
 cache:
   directories:
     - eggs
     - downloads
 python: 2.7
-install:
+jobs:
+  include:
+    - python: "2.7"
+      env: PLONE_VERSION=4.3
+    - python: "3.7"
+      env: PLONE_VERSION=5.2
+  fast_finish: true
+before_install:
   - pip install -r requirements.txt
+  - cp plone-$PLONE_VERSION.x.cfg buildout.cfg
+install:
   - buildout -N buildout:download-cache=downloads annotate
-  - buildout -c travis.cfg -t 30 buildout:download-cache=downloads
-env:
-  - zope_i18n_compile_mo_files=true
+  - buildout -t 30 buildout:download-cache=downloads
 script:
   - bin/test
 

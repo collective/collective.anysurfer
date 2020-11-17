@@ -4,6 +4,9 @@ Changelog
 1.3.5 (unreleased)
 ------------------
 
+- Add Plone 5 (Python 3) compatibility
+  [boulch, laulaz]
+
 - Add uninstall profile
   [laulaz]
 
