@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.3.5 (unreleased)
-------------------
+1.4 (2020-11-18)
+----------------
 
 - Add Plone 5 (Python 3) compatibility
   [boulch, laulaz]
