@@ -4,7 +4,8 @@ Changelog
 1.4.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- WEB-3460 : Override plone.app.layout.viewlets.path_bar.pt. Change <nav> to <div>
+  [boulch]
 
 
 1.4 (2020-11-18)
