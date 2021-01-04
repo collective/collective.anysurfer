@@ -4,6 +4,9 @@ Changelog
 1.3.5 (unreleased)
 ------------------
 
+- WEB-3460 : Override plone.app.layout.viewlets.path_bar.pt. Change <nav> to <div>
+  [boulch]
+
 - Add Plone 5 (Python 3) compatibility
   [boulch, laulaz]
 
