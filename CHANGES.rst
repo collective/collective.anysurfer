@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4.1 (unreleased)
+1.4.1 (2021-01-04)
 ------------------
 
 - Override plone.app.layout.viewlets.path_bar.pt. Change <nav> to <div>
