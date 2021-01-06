@@ -28,7 +28,7 @@ Features
 7. Fixes 'Required' labels html position
 8. Replace Plone replacetag="h2" by real tag
 9. Replace default Accessibility info with a multilingual editable text
-
+10. Replace "nav" by "div" for breadcrumb (Only for Plone5. It's already a div in Plone4.)
 
 Limitations
 -----------
