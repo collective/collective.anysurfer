@@ -46,4 +46,14 @@
         layer="..interfaces.ILayerSpecific"
         permission="cmf.ManagePortal"
         />
+
+    <browser:viewlet
+        zcml:condition="have plone-5"
+        name="plone.path_bar"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class="plone.app.layout.viewlets.common.PathBarViewlet"
+        template="plone5_path_bar.pt"
+        layer="..interfaces.ILayerSpecific"
+        permission="zope2.View"
+        />
 </configure>
