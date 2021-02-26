@@ -4,7 +4,8 @@ Changelog
 1.4.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix python3 compatibility : use html.escape instead of cgi.escape
+  [boulch]
 
 
 1.4.2 (2021-01-06)

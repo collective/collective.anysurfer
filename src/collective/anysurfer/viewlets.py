@@ -1,7 +1,11 @@
 import logging
 import six
 
-from cgi import escape
+if not six.PY2:
+    from html import escape as html_escape
+else:
+    from cgi import escape as html_escape
+
 from collective.anysurfer.layout import SKIN_TEMPLATE_KEY
 from plone import api
 from plone.app.layout.viewlets import common
@@ -22,8 +26,8 @@ class TitleViewlet(common.TitleViewlet):
         context_state = getMultiAdapter(
             (self.context, self.request), name=u"plone_context_state"
         )
-        page_title = escape(safe_unicode(context_state.object_title()))
-        root_title = escape(safe_unicode(portal_state.navigation_root_title()))
+        page_title = html_escape(safe_unicode(context_state.object_title()))
+        root_title = html_escape(safe_unicode(portal_state.navigation_root_title()))
         if page_title == root_title:
             logger.warn("View without explicit title: %s" % self.request.URL)
             view_name = self.view.__name__
@@ -65,7 +69,7 @@ class TitleViewletForSkinTemplateView(common.TitleViewlet):
         portal_state = getMultiAdapter(
             (self.context, self.request), name=u"plone_portal_state"
         )
-        root_title = escape(safe_unicode(portal_state.navigation_root_title()))
+        root_title = html_escape(safe_unicode(portal_state.navigation_root_title()))
         template = IAnnotations(self.view)[SKIN_TEMPLATE_KEY]
         title = template.title or template.id
         if title:
