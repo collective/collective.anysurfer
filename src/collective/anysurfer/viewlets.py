@@ -1,10 +1,10 @@
 import logging
 import six
 
-if not six.PY2:
-    from html import escape as html_escape
-else:
+if six.PY2:
     from cgi import escape as html_escape
+else:
+    from html import escape as html_escape
 
 from collective.anysurfer.layout import SKIN_TEMPLATE_KEY
 from plone import api
