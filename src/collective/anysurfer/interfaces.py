@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from collective.anysurfer import _
 from collective.anysurfer.utils import get_default_text_translations
-from collective.z3cform.datagridfield import DataGridFieldFactory
+from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.registry import DictRow
 from plone.app.textfield import RichText
 from plone.autoform.directives import widget

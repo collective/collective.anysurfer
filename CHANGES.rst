@@ -4,6 +4,9 @@ Changelog
 1.4.3 (unreleased)
 ------------------
 
+- Fix import from collective.z3cform.datagridfield
+  [laulaz]
+
 - Fix python3 compatibility : use html.escape instead of cgi.escape
   [boulch]
 
