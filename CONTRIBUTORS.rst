@@ -2,4 +2,5 @@
 - Laurent Lasudry [Affinitic]
 - Valentin Piret [Affinitic]
 - Sébastien Sirtoli [Affinitic]
-- Christophe Boulanger [IMIO]
+- Christophe Boulanger [iMio]
+- Benoît Suttor [iMio]
