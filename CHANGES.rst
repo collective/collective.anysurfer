@@ -4,7 +4,8 @@ Changelog
 1.4.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add Plone 6 compatibility.
+  [bsuttor]
 
 
 1.4.3 (2021-07-31)

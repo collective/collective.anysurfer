@@ -2,6 +2,7 @@
 import six
 
 from collective.anysurfer import HAS_PLONE_5
+from collective.anysurfer import HAS_PLONE_6
 from plone import api
 from plone.registry.interfaces import IRegistry
 from plone.app.textfield.value import RichTextValue
@@ -9,7 +10,7 @@ from Products.PortalTransforms.libtransforms.utils import bodyfinder
 from zope.annotation.interfaces import IAnnotations
 from zope.component import getUtility
 
-if HAS_PLONE_5:
+if HAS_PLONE_5 or HAS_PLONE_6:
     from plone.i18n.utility import setLanguageBinding
     from Products.CMFPlone.interfaces import ILanguageSchema
 
@@ -31,9 +32,9 @@ def get_default_text_translations():
     if request is None:
         return
     texts = []
-    if HAS_PLONE_5:
+    if HAS_PLONE_5 or HAS_PLONE_6:
         registry = getUtility(IRegistry)
-        language_settings = registry.forInterface(ILanguageSchema, prefix='plone')
+        language_settings = registry.forInterface(ILanguageSchema, prefix="plone")
         store_cookie_negotiation = language_settings.use_cookie_negotiation
         language_settings.use_cookie_negotiation = True
     else:
@@ -45,7 +46,7 @@ def get_default_text_translations():
         text_translation = {}
         # Force language into request
         request["set_language"] = language
-        if HAS_PLONE_5:
+        if HAS_PLONE_5 or HAS_PLONE_6:
             setLanguageBinding(request)
         else:
             language_tool.setLanguageBindings()
@@ -58,11 +59,11 @@ def get_default_text_translations():
                 text_translation["language"] = language
             text_translation["text"] = RichTextValue(text, "text/html", "text/html")
             texts.append(text_translation)
-        if not HAS_PLONE_5:
+        if not HAS_PLONE_5 and not HAS_PLONE_6:
             IAnnotations(request).clear()
-    if HAS_PLONE_5:
+    if HAS_PLONE_5 or HAS_PLONE_6:
         language_settings.use_cookie_negotiation = store_cookie_negotiation
     else:
         language_tool.use_cookie_negotiation = store_cookie_negotiation
-    del request.other['set_language']
+    del request.other["set_language"]
     return texts
