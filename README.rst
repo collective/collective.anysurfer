@@ -33,7 +33,7 @@ Features
 Limitations
 -----------
 
-This add-on has been developed on Plone 4.3 (Python 2) and Plone 5.2 (Python 3).
+This add-on has been developed on Plone 4.3 (Python 2) and Plone 5.2/6 (Python 3).
 
 
 Translations
