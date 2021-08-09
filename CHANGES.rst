@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4.4 (unreleased)
+1.4.4 (2021-08-09)
 ------------------
 
 - Add Plone 6 compatibility.
