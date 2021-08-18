@@ -8,6 +8,8 @@
 
     <includeDependencies package="." />
     <five:registerPackage package="." initialize=".initialize" />
+
+    <include package="Products.CMFCore" file="permissions.zcml" />
     <include package="plone.transformchain" />
     <include package="collective.z3cform.datagridfield" />
     <include package="z3c.jbot" file="meta.zcml" />

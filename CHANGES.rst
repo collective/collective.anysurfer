@@ -4,7 +4,8 @@ Changelog
 1.4.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Include CMFCore permissions to avoid potential ComponentLookupError
+  [laulaz]
 
 
 1.4.4 (2021-08-09)
