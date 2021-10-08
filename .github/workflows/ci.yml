@@ -33,7 +33,11 @@ jobs:
 
       # python install
       - name: pip install
-        run: pip install -r requirements.txt
+        run: |
+          pip --version
+          pip install pip --upgrade
+          pip --version
+          pip install -r requirements.txt
 
       # buildout
       - name: buildout
