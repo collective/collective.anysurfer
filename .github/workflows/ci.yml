@@ -11,8 +11,10 @@ jobs:
         include:
           - python-version: 2.7
             plone-version: 4.3
+            requirement-file: "requirements-4.3.x.txt"
           - python-version: 3.7
             plone-version: 5.2
+            requirement-file: "requirements.txt"
     steps:
       # git checkout
       - uses: actions/checkout@v2
@@ -37,7 +39,7 @@ jobs:
       - name: pip install
         run: |
           pip --version
-          pip install -r requirements.txt
+          pip install -r ${{ matrix.requirement-file }}
 
       # buildout
       - name: buildout
