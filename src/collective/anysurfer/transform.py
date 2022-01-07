@@ -123,7 +123,7 @@ class AnySurfer(object):
     def transformBytes(self, result, encoding):
         if not self.applyTransform():
             return result
-        soup = BeautifulSoup(result, "lxml")
+        soup = BeautifulSoup(result, "lxml", from_encoding=encoding)
         remove_empty_lists(soup)
         fill_required_titles(soup)
         assemble_required_labels(soup)
@@ -135,7 +135,7 @@ class AnySurfer(object):
     def transformUnicode(self, result, encoding):
         if not self.applyTransform():
             return result
-        soup = BeautifulSoup(result, "lxml")
+        soup = BeautifulSoup(result, "lxml", from_encoding=encoding)
         remove_empty_lists(soup)
         fill_required_titles(soup)
         assemble_required_labels(soup)
@@ -149,7 +149,7 @@ class AnySurfer(object):
             return result
         transformed = []
         for r in result:
-            soup = BeautifulSoup(r, "lxml")
+            soup = BeautifulSoup(r, "lxml", from_encoding=encoding)
             remove_empty_lists(soup)
             fill_required_titles(soup)
             assemble_required_labels(soup)

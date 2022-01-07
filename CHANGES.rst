@@ -4,6 +4,9 @@ Changelog
 1.4.5 (unreleased)
 ------------------
 
+- Add "from_encoding" parameter to BeautifulSoup transformations to fix encoding.
+  [boulch]
+
 - Include CMFCore permissions to avoid potential ComponentLookupError
   [laulaz]
 
