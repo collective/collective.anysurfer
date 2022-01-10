@@ -4,6 +4,9 @@ Changelog
 1.4.5 (unreleased)
 ------------------
 
+- Get rid of includeDependencies for Plone 6 compatibility
+  [laulaz]
+
 - Add "from_encoding" parameter to BeautifulSoup transformations to fix encoding.
   [boulch]
 
