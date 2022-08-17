@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4.6 (unreleased)
+1.4.6 (2022-08-17)
 ------------------
 
 - Fix import error for `ILanguageSchema` on Plone 5.2 / 6
