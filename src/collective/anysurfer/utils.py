@@ -11,8 +11,8 @@ from zope.annotation.interfaces import IAnnotations
 from zope.component import getUtility
 
 if HAS_PLONE_5 or HAS_PLONE_6:
+    from plone.i18n.interfaces import ILanguageSchema
     from plone.i18n.utility import setLanguageBinding
-    from Products.CMFPlone.interfaces import ILanguageSchema
 
 
 def get_langs():

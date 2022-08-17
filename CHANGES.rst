@@ -4,7 +4,8 @@ Changelog
 1.4.6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix import error for `ILanguageSchema` on Plone 5.2 / 6
+  [laulaz]
 
 
 1.4.5 (2022-01-19)
