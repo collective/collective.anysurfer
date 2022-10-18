@@ -21,4 +21,12 @@
     handler=".upgrades.add_control_panel"
   />
 
+  <genericsetup:upgradeDepends
+    source="0003"
+    destination="0004"
+    title="Add specific controlpanel permission"
+    description=""
+    profile="collective.anysurfer:default"
+    import_steps="controlpanel"
+  />
 </configure>

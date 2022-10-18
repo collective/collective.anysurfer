@@ -44,7 +44,7 @@
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
         class=".controlpanel.AnysurferSettingsControlPanel"
         layer="..interfaces.ILayerSpecific"
-        permission="cmf.ManagePortal"
+        permission="collective.anysurfer.ManageControlPanel"
         />
 
     <browser:viewlet

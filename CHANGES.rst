@@ -4,7 +4,8 @@ Changelog
 1.4.7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Change permissions : By default, configlet should be accessible for Manager AND Site Administrator
+  [boulch]
 
 
 1.4.6 (2022-08-17)
