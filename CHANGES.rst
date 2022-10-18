@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4.7 (unreleased)
+1.4.7 (2022-10-18)
 ------------------
 
 - Change permissions : By default, configlet should be accessible for Manager AND Site Administrator
