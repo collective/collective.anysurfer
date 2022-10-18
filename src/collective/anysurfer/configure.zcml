@@ -12,8 +12,11 @@
     <include package="plone.transformchain" />
     <include package="collective.z3cform.datagridfield" />
     <include package="z3c.jbot" file="meta.zcml" />
-    <include package=".browser" />
+
+    <include file="permissions.zcml" />
     <include file="upgrades.zcml" />
+
+    <include package=".browser" />
 
     <i18n:registerTranslations directory="locales"/>
 
