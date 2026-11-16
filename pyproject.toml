@@ -6,6 +6,80 @@ requires = ["setuptools>=68.2,<83", "wheel"]
 
 
 
+# START-MARKER-MANUAL-CONFIG
+# Anything from here until END-MARKER-MANUAL-CONFIG
+# will be kept by plone.meta
+
+[project]
+name = "collective.anysurfer"
+version = "2.0.0.dev0"
+description = "Anysurfer (Belgian accessibility standard) support for Plone"
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Plone",
+    "Framework :: Plone :: 6.1",
+    "Framework :: Plone :: 6.2",
+    "Framework :: Plone :: Addon",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+license = "GPL-2.0-only"
+dynamic = ["readme"]
+requires-python = ">=3.10"
+authors = [
+    {name = "Godefroid Chapelle"},
+]
+dependencies = [
+    "Products.CMFCore",
+    "Products.CMFPlone",
+    "Products.GenericSetup",
+    "Products.PortalTransforms",
+    "Zope",
+    "beautifulsoup4",
+    "collective.z3cform.datagridfield",
+    "lxml",
+    "plone.api",
+    "plone.app.layout",
+    "plone.app.registry",
+    "plone.app.textfield",
+    "plone.autoform",
+    "plone.i18n",
+    "plone.memoize",
+    "plone.registry",
+    "plone.theme",
+    "plone.transformchain",
+    "six",
+    "z3c.jbot",
+]
+keywords = ["Python", "Plone", "accessibility", "Anysurfer"]
+
+[project.entry-points."plone.autoinclude.plugin"]
+target = "plone"
+
+[project.optional-dependencies]
+test = [
+    "plone.app.testing",
+    "plone.testing",
+    "unittest2",
+    "zest.releaser[recommended]",
+    "zestreleaser.towncrier",
+    "zope.testrunner",
+]
+
+[project.urls]
+PyPI = "https://pypi.org/project/collective.anysurfer"
+Source = "https://github.com/collective/collective.anysurfer"
+Issues = "https://github.com/collective/collective.anysurfer/issues"
+Changelog = "https://github.com/collective/collective.anysurfer/blob/master/CHANGES.md"
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md", "CONTRIBUTORS.md", "CHANGES.md"], content-type = "text/markdown"}
+# END-MARKER-MANUAL-CONFIG
+
 [tool.towncrier]
 directory = "news/"
 filename = "CHANGES.md"
