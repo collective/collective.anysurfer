@@ -1,6 +1,6 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
-version = "1.4.8.dev0"
+version = "2.0.0.dev0"
 
 long_description = (
     open("README.md").read()
@@ -22,12 +22,14 @@ setup(
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Plone",
-        "Framework :: Plone :: 4.3",
-        "Framework :: Plone :: 5.2",
-        "Framework :: Plone :: 6.0",
+        "Framework :: Plone :: 6.1",
+        "Framework :: Plone :: 6.2",
+        "Framework :: Plone :: Addon",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
@@ -36,13 +38,10 @@ setup(
     author_email="",
     url="https://github.com/collective/collective.anysurfer/",
     license="gpl",
-    packages=find_packages("src"),
-    package_dir={"": "src"},
-    namespace_packages=["collective"],
     include_package_data=True,
     zip_safe=False,
+    python_requires=">=3.10",
     install_requires=[
-        "setuptools",
         "z3c.jbot",
         "plone.api",
         "beautifulsoup4",
