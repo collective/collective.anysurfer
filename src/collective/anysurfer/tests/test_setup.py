@@ -1,6 +1,8 @@
-import unittest2 as unittest
 from collective.anysurfer.testing import COLLECTIVE_ANYSURFER_INTEGRATION_TESTING
 from plone import api
+
+import unittest2 as unittest
+
 try:
     from Products.CMFPlone.utils import get_installer
 except ImportError:
@@ -20,14 +22,13 @@ class TestSetup(unittest.TestCase):
             self.installer = api.portal.get_tool("portal_quickinstaller")
 
     def test_product_is_installed(self):
-        """ Validate that our products GS profile has been run and the product
-            installed
+        """Validate that our products GS profile has been run and the product
+        installed
         """
         self.assertTrue(self.installer.isProductInstalled("collective.anysurfer"))
 
     def test_default_text_translations(self):
-        """ Validate that text is (force) translated during the setup process
-        """
+        """Validate that text is (force) translated during the setup process"""
         texts = api.portal.get_registry_record(
             "collective.anysurfer.interfaces.IAnysurferSettings.accessibility_translations"
         )

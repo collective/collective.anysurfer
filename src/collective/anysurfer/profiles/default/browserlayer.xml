@@ -1,8 +1,7 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- This file registers the browserlayer so our custom views do not appear in default plone site -->
-
 <layers>
-  <layer name="Collective Anysurfer"
-    interface="collective.anysurfer.interfaces.ILayerSpecific"
+  <layer interface="collective.anysurfer.interfaces.ILayerSpecific"
+         name="Collective Anysurfer"
   />
 </layers>

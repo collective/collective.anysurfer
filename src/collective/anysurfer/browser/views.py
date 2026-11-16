@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from plone import api
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -21,4 +20,4 @@ class AccessibilityView(BrowserView):
         for accessibility_translation in accessibility_translations:
             if lang == accessibility_translation.get("language"):
                 return accessibility_translation.get("text").output
-        return u""
+        return ""

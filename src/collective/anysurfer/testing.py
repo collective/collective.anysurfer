@@ -1,10 +1,7 @@
-from plone.app.testing import (
-    PLONE_FIXTURE,
-    FunctionalTesting,
-    IntegrationTesting,
-    PloneSandboxLayer,
-    applyProfile,
-)
+from plone.app.testing import applyProfile
+from plone.app.testing import IntegrationTesting
+from plone.app.testing import PLONE_FIXTURE
+from plone.app.testing import PloneSandboxLayer
 from Products.CMFCore.utils import getToolByName
 from zope.configuration import xmlconfig
 

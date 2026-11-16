@@ -1,11 +1,8 @@
-# -*- coding: utf-8 -*-
-import six
-
 from collective.anysurfer import HAS_PLONE_5
 from collective.anysurfer import HAS_PLONE_6
 from plone import api
-from plone.registry.interfaces import IRegistry
 from plone.app.textfield.value import RichTextValue
+from plone.registry.interfaces import IRegistry
 from Products.PortalTransforms.libtransforms.utils import bodyfinder
 from zope.annotation.interfaces import IAnnotations
 from zope.component import getUtility
@@ -53,10 +50,7 @@ def get_default_text_translations():
         view = api.content.get_view(name=view_name, context=portal, request=request)
         if view is not None:
             text = bodyfinder(view.index()).strip()
-            if six.PY2:
-                text_translation["language"] = language.decode("utf8")
-            else:
-                text_translation["language"] = language
+            text_translation["language"] = language
             text_translation["text"] = RichTextValue(text, "text/html", "text/html")
             texts.append(text_translation)
         if not HAS_PLONE_5 and not HAS_PLONE_6:

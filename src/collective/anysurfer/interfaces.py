@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.anysurfer import _
 from collective.anysurfer.utils import get_default_text_translations
 from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
@@ -21,22 +20,27 @@ class ISkinTemplateView(Interface):
 class ITextRowSchema(Interface):
 
     language = schema.TextLine(
-        title=_(u"Language (en, fr,...)"),
-        description=_(u"Enter the language code. Ex.: en"),
+        title=_("Language (en, fr,...)"),
+        description=_("Enter the language code. Ex.: en"),
     )
 
-    text = RichText(title=_(u"Text"),)
+    text = RichText(
+        title=_("Text"),
+    )
 
 
 class IAnysurferSettings(Interface):
     """Schema for the control panel form."""
 
     accessibility_translations = schema.List(
-        title=_(u"Multilingual accessibility statements texts"),
+        title=_("Multilingual accessibility statements texts"),
         description=_(
-            u"This text will be available through the accessibility site action"
+            "This text will be available through the accessibility site action"
         ),
-        value_type=DictRow(title=u"Value", schema=ITextRowSchema,),
+        value_type=DictRow(
+            title="Value",
+            schema=ITextRowSchema,
+        ),
         defaultFactory=get_default_text_translations,
         required=True,
     )
