@@ -52,7 +52,6 @@ dependencies = [
     "plone.registry",
     "plone.theme",
     "plone.transformchain",
-    "six",
     "z3c.jbot",
 ]
 keywords = ["Python", "Plone", "accessibility", "Anysurfer"]

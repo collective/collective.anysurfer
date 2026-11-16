@@ -9,7 +9,6 @@ from zope.component import getMultiAdapter
 from zope.i18n import translate
 
 import logging
-import six
 
 logger = logging.getLogger("collective.anysurfer")
 
@@ -43,8 +42,6 @@ class TitleViewlet(common.TitleViewlet):
                 try:
                     portal = api.portal.get()
                     url = self.request.getURL()
-                    if six.PY2:
-                        url = url.encode("utf8")
                     url = url.replace(portal.absolute_url(), "").lstrip("/")
                     portal.unrestrictedTraverse(url)
 

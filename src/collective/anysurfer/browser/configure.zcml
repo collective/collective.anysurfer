@@ -1,7 +1,6 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="collective.anysurfer"
     >
 
@@ -15,15 +14,8 @@
 
   <browser:resource
       name="search.js"
-      file="search_plone5.js"
+      file="search.js"
       layer="..interfaces.ILayerSpecific"
-      zcml:condition="have plone-5"
-      />
-  <browser:resource
-      name="search.js"
-      file="search_plone4.js"
-      layer="..interfaces.ILayerSpecific"
-      zcml:condition="not-have plone-5"
       />
 
   <browser:view
@@ -53,9 +45,8 @@
       name="plone.path_bar"
       manager="plone.app.layout.viewlets.interfaces.IAboveContent"
       class="plone.app.layout.viewlets.common.PathBarViewlet"
-      template="plone5_path_bar.pt"
+      template="path_bar.pt"
       permission="zope2.View"
       layer="..interfaces.ILayerSpecific"
-      zcml:condition="have plone-5"
       />
 </configure>
