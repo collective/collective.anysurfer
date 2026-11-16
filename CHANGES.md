@@ -2,9 +2,32 @@
 
 <!-- towncrier release notes start -->
 
-## 1.4.8 (unreleased)
+## 2.0.0 (unreleased)
 
-- Nothing changed yet.
+
+- Breaking: replace the `pkg_resources` namespace of `collective` with a
+  PEP 420 native namespace. Support Plone 6.1 and 6.2 only, on Python 3.10
+  to 3.13. Use 1.4.x for Plone 4.3 to 6.0.
+  [remdub]
+
+- Drop the Python 2 and Plone 4 code: `HAS_PLONE_5` and `HAS_PLONE_6` (which
+  called `plone.api` at import time), the Plone 4 language handling and
+  `search.js`, and the overrides of templates that no longer exist
+  (accessibility-info skin template, `plone.app.search`). Register
+  `search.js` and the breadcrumb viewlet without `zcml:condition`.
+  [remdub]
+
+- Import `INonInstallable`, `IPloneSiteRoot` and `safe_text` from
+  `plone.base` instead of the aliases Plone 6.2 deprecates. Port the tests to
+  `unittest`, `plone.testing.zope` and `get_installer`: they could no longer
+  run on Python 3.10+ (`unittest2`) nor on Plone 5.2+ (`portal_quickinstaller`).
+  [remdub]
+
+- Configure the package with plone.meta 2.12.0 (test matrix on Plone 6.2.3
+  and 6.1), move its metadata to `pyproject.toml`, convert the documentation
+  to Markdown and run the development environment on Plone 6.2.3 with uv
+  instead of buildout. Drop Travis and the buildout configuration.
+  [remdub]
 
 
 ## 1.4.7 (2022-10-18)
