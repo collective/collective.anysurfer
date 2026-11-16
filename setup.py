@@ -3,12 +3,11 @@ from setuptools import setup, find_packages
 version = "1.4.8.dev0"
 
 long_description = (
-    open("README.rst").read() + "\n" + "Contributors\n"
-    "============\n"
+    open("README.md").read()
     + "\n"
-    + open("CONTRIBUTORS.rst").read()
+    + open("CONTRIBUTORS.md").read()
     + "\n"
-    + open("CHANGES.rst").read()
+    + open("CHANGES.md").read()
     + "\n"
 )
 
@@ -17,6 +16,7 @@ setup(
     version=version,
     description="Anysurfer (Belgian accessibility standard) support for Plone",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     # Get more strings from
     # http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[

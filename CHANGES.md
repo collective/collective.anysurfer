@@ -1,48 +1,41 @@
-Changelog
-=========
+# Changelog
 
-1.4.8 (unreleased)
-------------------
+## 1.4.8 (unreleased)
 
 - Nothing changed yet.
 
 
-1.4.7 (2022-10-18)
-------------------
+## 1.4.7 (2022-10-18)
 
 - Change permissions : By default, configlet should be accessible for Manager AND Site Administrator
   [boulch]
 
 
-1.4.6 (2022-08-17)
-------------------
+## 1.4.6 (2022-08-17)
 
 - Fix import error for `ILanguageSchema` on Plone 5.2 / 6
   [laulaz]
 
 
-1.4.5 (2022-01-19)
-------------------
+## 1.4.5 (2022-01-19)
 
 - Get rid of includeDependencies for Plone 6 compatibility
   [laulaz]
 
-- Add "from_encoding" parameter to BeautifulSoup transformations to fix encoding.
+- Add `from_encoding` parameter to BeautifulSoup transformations to fix encoding.
   [boulch]
 
 - Include CMFCore permissions to avoid potential ComponentLookupError
   [laulaz]
 
 
-1.4.4 (2021-08-09)
-------------------
+## 1.4.4 (2021-08-09)
 
 - Add Plone 6 compatibility.
   [bsuttor]
 
 
-1.4.3 (2021-07-31)
-------------------
+## 1.4.3 (2021-07-31)
 
 - Fix import from collective.z3cform.datagridfield
   [laulaz]
@@ -51,22 +44,19 @@ Changelog
   [boulch]
 
 
-1.4.2 (2021-01-06)
-------------------
+## 1.4.2 (2021-01-06)
 
 - Breadcrumb is already in a "div" in Plone4, so, we override plone.app.layout.viewlets.path_bar.pt. only for Plone5.
   [boulch]
 
 
-1.4.1 (2021-01-04)
-------------------
+## 1.4.1 (2021-01-04)
 
-- Override plone.app.layout.viewlets.path_bar.pt. Change <nav> to <div>
+- Override plone.app.layout.viewlets.path_bar.pt. Change `<nav>` to `<div>`
   [boulch]
 
 
-1.4 (2020-11-18)
-----------------
+## 1.4 (2020-11-18)
 
 - Add Plone 5 (Python 3) compatibility
   [boulch, laulaz]
@@ -75,15 +65,13 @@ Changelog
   [laulaz]
 
 
-1.3.4 (2020-11-04)
-------------------
+## 1.3.4 (2020-11-04)
 
 - Content types images should be inside links in search results
   [laulaz]
 
 
-1.3.3 (2020-06-17)
-------------------
+## 1.3.3 (2020-06-17)
 
 - Avoid displaying 'None' title for unknown browser views
   [laulaz]
@@ -92,22 +80,19 @@ Changelog
   [laulaz]
 
 
-1.3.2 (2020-06-15)
-------------------
+## 1.3.2 (2020-06-15)
 
 - Fix multilingual default text translations at install : #3
   [laulaz]
 
 
-1.3.1 (2020-05-28)
-------------------
+## 1.3.1 (2020-05-28)
 
 - Fix upgrade steps (1.2 -> 1.3)
   [laulaz]
 
 
-1.3 (2020-05-28)
-----------------
+## 1.3 (2020-05-28)
 
 - Override Accessibility info with a multilingual / editable / filled by default
   text. The text can be changed in a new Anysurfer control panel (upgrade step
@@ -124,8 +109,7 @@ Changelog
   [laulaz]
 
 
-1.2.2 (2020-04-29)
-------------------
+## 1.2.2 (2020-04-29)
 
 - Fix view titles calculation in multilingual websites : #1
   [laulaz]
@@ -134,15 +118,13 @@ Changelog
   [laulaz]
 
 
-1.2.1 (2019-11-20)
-------------------
+## 1.2.1 (2019-11-20)
 
 - Harmonization of '(Required)' syntax for fields
   [laulaz]
 
 
-1.2 (2019-10-04)
-----------------
+## 1.2 (2019-10-04)
 
 - Add documentation, contributors, fix setup.py & use RST
   [laulaz]
@@ -166,14 +148,12 @@ Changelog
   [laulaz]
 
 
-1.1 (2012-11-12)
-----------------
+## 1.1 (2012-11-12)
 
 - Nothing changed yet.
 
 
-1.0 (2012-11-09)
-----------------
+## 1.0 (2012-11-09)
 
 - Package created using zopeskel
   []
