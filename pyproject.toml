@@ -4,8 +4,6 @@
 [build-system]
 requires = ["setuptools>=68.2,<83", "wheel"]
 
-
-
 # START-MARKER-MANUAL-CONFIG
 # Anything from here until END-MARKER-MANUAL-CONFIG
 # will be kept by plone.meta
@@ -48,6 +46,7 @@ dependencies = [
     "plone.app.registry",
     "plone.app.textfield",
     "plone.autoform",
+    "plone.base",
     "plone.i18n",
     "plone.memoize",
     "plone.registry",
@@ -63,9 +62,9 @@ target = "plone"
 
 [project.optional-dependencies]
 test = [
+    "plone.app.contenttypes",
     "plone.app.testing",
     "plone.testing",
-    "unittest2",
     "zest.releaser[recommended]",
     "zestreleaser.towncrier",
     "zope.testrunner",

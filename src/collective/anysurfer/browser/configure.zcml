@@ -43,7 +43,7 @@
 
   <browser:page
       name="anysurfer-settings"
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      for="plone.base.interfaces.IPloneSiteRoot"
       class=".controlpanel.AnysurferSettingsControlPanel"
       permission="collective.anysurfer.ManageControlPanel"
       layer="..interfaces.ILayerSpecific"

@@ -2,7 +2,7 @@ from collective.anysurfer.layout import SKIN_TEMPLATE_KEY
 from html import escape as html_escape
 from plone import api
 from plone.app.layout.viewlets import common
-from Products.CMFPlone.utils import safe_unicode
+from plone.base.utils import safe_text
 from zExceptions import NotFound
 from zope.annotation.interfaces import IAnnotations
 from zope.component import getMultiAdapter
@@ -22,10 +22,10 @@ class TitleViewlet(common.TitleViewlet):
         context_state = getMultiAdapter(
             (self.context, self.request), name="plone_context_state"
         )
-        page_title = html_escape(safe_unicode(context_state.object_title()))
-        root_title = html_escape(safe_unicode(portal_state.navigation_root_title()))
+        page_title = html_escape(safe_text(context_state.object_title()))
+        root_title = html_escape(safe_text(portal_state.navigation_root_title()))
         if page_title == root_title:
-            logger.warn("View without explicit title: %s" % self.request.URL)
+            logger.warning("View without explicit title: %s" % self.request.URL)
             view_name = self.view.__name__
             view_title = translate(view_name, "plone", context=self.request)
             if view_name == "search":
@@ -65,12 +65,12 @@ class TitleViewletForSkinTemplateView(common.TitleViewlet):
         portal_state = getMultiAdapter(
             (self.context, self.request), name="plone_portal_state"
         )
-        root_title = html_escape(safe_unicode(portal_state.navigation_root_title()))
+        root_title = html_escape(safe_text(portal_state.navigation_root_title()))
         template = IAnnotations(self.view)[SKIN_TEMPLATE_KEY]
         title = template.title or template.id
         if title:
             view_title = translate(title, "plone", context=self.request)
             self.site_title = f"{view_title} &mdash; {root_title}"
         else:
-            logger.warn("Skin template without explicit title: %s" % template.id)
+            logger.warning("Skin template without explicit title: %s" % template.id)
             self.site_title = root_title

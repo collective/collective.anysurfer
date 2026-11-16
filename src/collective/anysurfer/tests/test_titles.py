@@ -1,15 +1,15 @@
 from collective.anysurfer.interfaces import ILayerSpecific
 from collective.anysurfer.testing import COLLECTIVE_ANYSURFER_INTEGRATION_TESTING
 from plone import api
+from plone.app.contenttypes.interfaces import IPloneAppContenttypesLayer
 from plone.app.layout.navigation.interfaces import INavigationRoot
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-from plone.testing.z2 import Browser
+from plone.testing.zope import Browser
 from urllib.error import HTTPError
 from zope.interface import alsoProvides
-from zope.interface import directlyProvides
 
-import unittest2 as unittest
+import unittest
 
 
 class TestTitles(unittest.TestCase):
@@ -21,7 +21,8 @@ class TestTitles(unittest.TestCase):
         self.portal = self.layer["portal"]
         self.request = self.layer["request"]
         setRoles(self.portal, TEST_USER_ID, ["Manager"])
-        directlyProvides(self.request, ILayerSpecific)
+        # Integration tests don't traverse: set the browser layers by hand
+        alsoProvides(self.request, ILayerSpecific, IPloneAppContenttypesLayer)
 
     def asserTitle(self, view_name, title):
         physical_path = list(self.portal.getPhysicalPath())

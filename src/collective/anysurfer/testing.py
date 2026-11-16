@@ -11,6 +11,11 @@ class CollectiveAnysurfer(PloneSandboxLayer):
     defaultBases = (PLONE_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
+        # The views of the content types (document_view on the site root)
+        import plone.app.contenttypes
+
+        self.loadZCML(package=plone.app.contenttypes)
+
         # Load ZCML for this package
         import collective.anysurfer
 
