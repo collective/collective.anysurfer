@@ -6,8 +6,8 @@
 
 
 - Breaking: replace the `pkg_resources` namespace of `collective` with a
-  PEP 420 native namespace. Support Plone 6.1 and 6.2 only, on Python 3.10
-  to 3.13. Use 1.4.x for Plone 4.3 to 6.0.
+  PEP 420 native namespace. Support Plone 6.1 only on Python 3.10 to 3.13,
+  and Plone 6.2 on Python 3.10 to 3.14. Use 1.4.x for Plone 4.3 to 6.0.
   [remdub]
 
 - Drop the Python 2 and Plone 4 code: `HAS_PLONE_5` and `HAS_PLONE_6` (which

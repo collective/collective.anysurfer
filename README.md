@@ -30,7 +30,8 @@ the Anysurfer control panel.
 
 ## Compatibility
 
-Version 2.x supports Plone 6.1 and 6.2, on Python 3.10 to 3.13.
+Version 2.x supports Plone 6.1 on Python 3.10 to 3.13, and Plone 6.2 on Python
+3.10 to 3.14.
 For Plone 4.3 to 6.0, use collective.anysurfer 1.4.x.
 
 The search page and breadcrumb overrides still use the Plone 5 markup.
