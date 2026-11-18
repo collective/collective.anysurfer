@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from bs4 import BeautifulSoup
 from collective.anysurfer import _
 from plone import api
@@ -7,7 +5,8 @@ from plone.transformchain.interfaces import ITransform
 from zope.component import adapts
 from zope.component.hooks import getSite
 from zope.i18n import translate
-from zope.interface import Interface, implementer
+from zope.interface import implementer
+from zope.interface import Interface
 
 
 def remove_empty_lists(soup):
@@ -29,7 +28,7 @@ def fill_required_titles(soup):
       <span class="required" title="Required"> (Required)</span>
     """
     current_lang = api.portal.get_current_language()[:2]
-    translated_required = translate(_(u"Required"), target_language=current_lang)
+    translated_required = translate(_("Required"), target_language=current_lang)
     required_tags = soup.findAll(
         lambda tag: tag.name == "span"
         and tag.has_attr("title")
@@ -38,7 +37,7 @@ def fill_required_titles(soup):
         and "required" in tag["class"]
     )
     for tag in required_tags:
-        tag.string = " ({0})".format(translated_required)
+        tag.string = f" ({translated_required})"
 
 
 def assemble_required_labels(soup):
@@ -85,7 +84,8 @@ def change_news_images_alt(soup):
         return
     current_lang = api.portal.get_current_language()[:2]
     translated_news_alt = translate(
-        _(u"News image - click to view full image"), target_language=current_lang,
+        _("News image - click to view full image"),
+        target_language=current_lang,
     )
     for tag in image_tags:
         tag["alt"] = translated_news_alt
@@ -101,7 +101,7 @@ def add_alt_on_all_images(soup):
 
 
 @implementer(ITransform)
-class AnySurfer(object):
+class AnySurfer:
     adapts(Interface, Interface)
     order = 9000
 

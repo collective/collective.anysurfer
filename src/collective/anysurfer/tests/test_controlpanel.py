@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
 from collective.anysurfer.testing import COLLECTIVE_ANYSURFER_INTEGRATION_TESTING
-from plone.app.testing import TEST_USER_ID, applyProfile, setRoles
 
 import unittest
 

@@ -1,59 +1,52 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:zcml="http://namespaces.zope.org/zcml"
     xmlns:browser="http://namespaces.zope.org/browser"
-    i18n_domain="collective.anysurfer">
+    i18n_domain="collective.anysurfer"
+    >
 
-    <browser:jbot directory="overrides" />
+  <browser:jbot directory="overrides" />
 
-    <browser:resourceDirectory
-        name="collective.anysurfer"
-        directory="static"
-        layer="..interfaces.ILayerSpecific" />
+  <browser:resourceDirectory
+      name="collective.anysurfer"
+      directory="static"
+      layer="..interfaces.ILayerSpecific"
+      />
 
-    <browser:resource
-        zcml:condition="have plone-5"
-        name="search.js"
-        file="search_plone5.js"
-        layer="..interfaces.ILayerSpecific"
-        />
-    <browser:resource
-        zcml:condition="not-have plone-5"
-        name="search.js"
-        file="search_plone4.js"
-        layer="..interfaces.ILayerSpecific"
-        />
+  <browser:resource
+      name="search.js"
+      file="search.js"
+      layer="..interfaces.ILayerSpecific"
+      />
 
-    <browser:view
-        for="*"
-        name="accessibility-view"
-        permission="zope2.Public"
-        layer="..interfaces.ILayerSpecific"
-        class=".views.AccessibilityView"
-        />
+  <browser:view
+      name="accessibility-view"
+      for="*"
+      class=".views.AccessibilityView"
+      permission="zope2.Public"
+      layer="..interfaces.ILayerSpecific"
+      />
 
-    <browser:page
-        for="*"
-        name="default_accessibility_text"
-        permission="zope2.Public"
-        class=".views.AccessibilityDefaultText"
-        />
+  <browser:page
+      name="default_accessibility_text"
+      for="*"
+      class=".views.AccessibilityDefaultText"
+      permission="zope2.Public"
+      />
 
-    <browser:page
-        name="anysurfer-settings"
-        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-        class=".controlpanel.AnysurferSettingsControlPanel"
-        layer="..interfaces.ILayerSpecific"
-        permission="collective.anysurfer.ManageControlPanel"
-        />
+  <browser:page
+      name="anysurfer-settings"
+      for="plone.base.interfaces.IPloneSiteRoot"
+      class=".controlpanel.AnysurferSettingsControlPanel"
+      permission="collective.anysurfer.ManageControlPanel"
+      layer="..interfaces.ILayerSpecific"
+      />
 
-    <browser:viewlet
-        zcml:condition="have plone-5"
-        name="plone.path_bar"
-        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
-        class="plone.app.layout.viewlets.common.PathBarViewlet"
-        template="plone5_path_bar.pt"
-        layer="..interfaces.ILayerSpecific"
-        permission="zope2.View"
-        />
+  <browser:viewlet
+      name="plone.path_bar"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      class="plone.app.layout.viewlets.common.PathBarViewlet"
+      template="path_bar.pt"
+      permission="zope2.View"
+      layer="..interfaces.ILayerSpecific"
+      />
 </configure>

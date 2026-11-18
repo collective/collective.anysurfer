@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-PROFILE_ID = u"profile-collective.anysurfer:default"
+PROFILE_ID = "profile-collective.anysurfer:default"
 
 
 def update_registry(context):

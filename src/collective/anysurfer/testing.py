@@ -1,10 +1,7 @@
-from plone.app.testing import (
-    PLONE_FIXTURE,
-    FunctionalTesting,
-    IntegrationTesting,
-    PloneSandboxLayer,
-    applyProfile,
-)
+from plone.app.testing import applyProfile
+from plone.app.testing import IntegrationTesting
+from plone.app.testing import PLONE_FIXTURE
+from plone.app.testing import PloneSandboxLayer
 from Products.CMFCore.utils import getToolByName
 from zope.configuration import xmlconfig
 
@@ -14,6 +11,11 @@ class CollectiveAnysurfer(PloneSandboxLayer):
     defaultBases = (PLONE_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
+        # The views of the content types (document_view on the site root)
+        import plone.app.contenttypes
+
+        self.loadZCML(package=plone.app.contenttypes)
+
         # Load ZCML for this package
         import collective.anysurfer
 
